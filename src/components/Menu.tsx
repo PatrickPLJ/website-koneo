@@ -46,10 +46,22 @@ export default function Menu() {
                 <div className="ico">{item.icon}</div>
                 <h3>{item.name} <span className="says">{item.says}</span></h3>
                 <p>{item.desc}</p>
-                <div className="price">
-                  {item.price}
-                  {item.fav && <span className="fav">Best Seller</span>}
-                </div>
+                {item.variants ? (
+                  <div className="variants">
+                    {item.variants.map((v) => (
+                      <div className="variant-row" key={v.label}>
+                        <span className="variant-label">{v.label}</span>
+                        <span className="price">{v.price}</span>
+                      </div>
+                    ))}
+                    {item.fav && <span className="fav">Best Seller</span>}
+                  </div>
+                ) : (
+                  <div className="price">
+                    {item.price}
+                    {item.fav && <span className="fav">Best Seller</span>}
+                  </div>
+                )}
               </article>
             )
           })}

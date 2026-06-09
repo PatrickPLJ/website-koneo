@@ -135,6 +135,11 @@ section{position:relative}
 .card p{font-size:.86rem;color:color-mix(in srgb,var(--navy) 72%,transparent);margin:.4rem 0 1rem}
 .price{font-family:"Fraunces",serif;font-weight:600;font-size:1.05rem}
 .price .fav{margin-left:.5rem;font:700 .62rem/1 "Plus Jakarta Sans";letter-spacing:.1em;text-transform:uppercase;color:var(--berry);border:1px solid var(--berry);padding:.2rem .4rem;border-radius:6px;vertical-align:middle}
+.variants{display:flex;flex-direction:column;gap:.4rem;margin-top:auto}
+.variant-row{display:flex;align-items:center;justify-content:space-between;gap:.5rem;background:var(--ice);border-radius:8px;padding:.35rem .6rem}
+.variant-label{font:600 .75rem/1 "Plus Jakarta Sans";letter-spacing:.06em;text-transform:uppercase;color:color-mix(in srgb,var(--navy) 60%,transparent)}
+.variant-row .price{font-size:.95rem}
+.variants .fav{align-self:flex-start;margin-top:.3rem;font:700 .62rem/1 "Plus Jakarta Sans";letter-spacing:.1em;text-transform:uppercase;color:var(--berry);border:1px solid var(--berry);padding:.2rem .4rem;border-radius:6px}
 .is-hidden{display:none}
 
 /* ============ KENAPA KONEO (about grid) ============ */

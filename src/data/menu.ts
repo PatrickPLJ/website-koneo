@@ -1,11 +1,17 @@
 export type Category = 'bingsoo' | 'food' | 'drink'
 
+export interface Variant {
+  label: string
+  price: string
+}
+
 export interface MenuItem {
   icon: string
   name: string
   says: string
   desc: string
   price: string
+  variants?: Variant[]
   fav?: boolean
   cat: Category
 }
@@ -15,27 +21,56 @@ export const MENU: MenuItem[] = [
   {
     cat: 'bingsoo', icon: '🍓', name: 'Stralgi', says: '/ Strawberry', fav: true,
     desc: 'Bingsoo Korea lembut, stroberi segar, saus stroberi melimpah. Favorit semua orang.',
-    price: 'Rp35.000',
+    price: 'Rp25.000',
+    variants: [
+      { label: 'Lite', price: 'Rp25.000' },
+      { label: 'Regular', price: 'Rp30.000' },
+    ],
   },
   {
     cat: 'bingsoo', icon: '🍵', name: 'Matcha', says: '/ Matcha',
     desc: 'Matcha asli ditabur almond di atas gunungan es yang lumer di mulut.',
-    price: 'Rp35.000',
+    price: 'Rp25.000',
+    variants: [
+      { label: 'Lite', price: 'Rp25.000' },
+      { label: 'Regular', price: 'Rp30.000' },
+    ],
   },
   {
     cat: 'bingsoo', icon: '🍪', name: 'Biscoff', says: '/ Biscoff',
     desc: 'Krim biscoff karamel dengan remahan biskuit lotus. Manis yang pas.',
-    price: 'Rp40.000',
+    price: 'Rp25.000',
+    variants: [
+      { label: 'Lite', price: 'Rp25.000' },
+      { label: 'Regular', price: 'Rp30.000' },
+    ],
   },
   {
     cat: 'bingsoo', icon: '🫐', name: 'Bleucurrent', says: '/ Blackcurrant',
     desc: 'Saus blackcurrant ungu yang asam-manis, super menyegarkan.',
-    price: 'Rp35.000',
+    price: 'Rp25.000',
+    variants: [
+      { label: 'Lite', price: 'Rp25.000' },
+      { label: 'Regular', price: 'Rp30.000' },
+    ],
   },
   {
     cat: 'bingsoo', icon: '🍫', name: 'Chokollilst', says: '/ Cookies & Cream',
     desc: 'Cokelat lembut dengan cookies and cream yang renyah. Wajib coba.',
-    price: 'Rp35.000',
+    price: 'Rp25.000',
+    variants: [
+      { label: 'Lite', price: 'Rp25.000' },
+      { label: 'Regular', price: 'Rp30.000' },
+    ],
+  },
+  {
+    cat: 'bingsoo', icon: '🤍', name: 'Orisinal', says: '/ Original',
+    desc: 'Bingsoo polos lembut tanpa topping berlebih. Murni, bersih, menyegarkan.',
+    price: 'Rp20.000',
+    variants: [
+      { label: 'Lite', price: 'Rp20.000' },
+      { label: 'Regular', price: 'Rp30.000' },
+    ],
   },
   // ---------- FOOD ----------
   {
