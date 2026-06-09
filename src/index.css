@@ -138,13 +138,32 @@ section{position:relative}
 .variant-row .price{font-size:.95rem}
 .variants .fav{align-self:flex-start;margin-top:.3rem;font:700 .62rem/1 "Plus Jakarta Sans";letter-spacing:.1em;text-transform:uppercase;color:var(--berry);border:1px solid var(--berry);padding:.2rem .4rem;border-radius:6px}
 .topping-price{color:var(--berry)}
-.soft-ice-banner{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;background:color-mix(in srgb,var(--navy) 6%,transparent);border:1.5px solid color-mix(in srgb,var(--navy) 14%,transparent);border-radius:var(--r);padding:1rem 1.4rem;margin-bottom:2rem}
-.soft-ice-badge{font:700 .7rem/1 "Plus Jakarta Sans";letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--navy);padding:.3rem .6rem;border-radius:6px;white-space:nowrap}
-.soft-ice-banner div{flex:1;display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap}
-.soft-ice-banner strong{font-family:"Fraunces",serif;font-size:1.05rem;font-weight:600;white-space:nowrap}
-.soft-ice-banner span{font-size:.84rem;color:color-mix(in srgb,var(--navy) 68%,transparent)}
-.soft-ice-time{font:700 .82rem/1 "Plus Jakarta Sans";color:var(--berry);white-space:nowrap}
+.beverage-section{display:flex;flex-direction:column;gap:2.5rem;margin-top:2rem}
+.bev-group-title{font-family:"Fraunces",serif;font-size:1.4rem;font-weight:600;display:flex;align-items:center;gap:.6rem;margin-bottom:1.1rem;padding-bottom:.6rem;border-bottom:1.5px solid color-mix(in srgb,var(--navy) 12%,transparent)}
+.bev-group-icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:1.2rem;background:color-mix(in srgb,var(--navy) 8%,transparent)}
 .is-hidden{display:none}
+
+/* ============ KONEO GOES TO ============ */
+.goes-to{background:var(--navy);color:var(--cream);overflow:hidden;position:relative}
+.goes-to .glow{position:absolute;width:min(560px,90vw);height:560px;top:-200px;right:10%;border-radius:50%;filter:blur(220px);background:#1d5aa0;z-index:0;pointer-events:none}
+.goes-to .wrap{position:relative;z-index:1}
+.goes-head{text-align:center;max-width:52ch;margin:0 auto clamp(2.5rem,5vw,3.6rem)}
+.goes-head .eyebrow{color:var(--ice);display:block;margin-bottom:.7rem}
+.goes-head h2{font-size:clamp(2rem,5vw,3.4rem)}
+.goes-head em{color:var(--gold)}
+.goes-head p{color:color-mix(in srgb,var(--cream) 80%,transparent);margin-top:.9rem}
+.goes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-bottom:3rem}
+.goes-card{background:color-mix(in srgb,var(--cream) 7%,transparent);border:1.5px solid color-mix(in srgb,var(--cream) 14%,transparent);border-radius:var(--r);padding:1.6rem;transition:transform .4s var(--ease),border-color .4s}
+.goes-card:hover{transform:translateY(-6px);border-color:color-mix(in srgb,var(--cream) 35%,transparent)}
+.goes-icon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:1rem;background:color-mix(in srgb,var(--cream) 12%,transparent);border:1px solid color-mix(in srgb,var(--cream) 20%,transparent)}
+.goes-card h3{font-family:"Fraunces",serif;font-size:1.25rem;font-weight:600;margin-bottom:.55rem}
+.goes-card p{font-size:.88rem;color:color-mix(in srgb,var(--cream) 76%,transparent);line-height:1.6}
+.goes-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1rem}
+.goes-tag{font:600 .7rem/1 "Plus Jakarta Sans";letter-spacing:.06em;text-transform:uppercase;padding:.3rem .55rem;border-radius:6px;background:color-mix(in srgb,var(--cream) 12%,transparent);color:color-mix(in srgb,var(--cream) 75%,transparent);border:1px solid color-mix(in srgb,var(--cream) 18%,transparent)}
+.goes-cta{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;background:color-mix(in srgb,var(--cream) 9%,transparent);border:1.5px solid color-mix(in srgb,var(--cream) 18%,transparent);border-radius:var(--r);padding:1.4rem 1.8rem}
+.goes-cta-text{display:flex;flex-direction:column;gap:.3rem}
+.goes-cta-text strong{font-family:"Fraunces",serif;font-size:1.1rem;font-weight:600}
+.goes-cta-text span{font-size:.86rem;color:color-mix(in srgb,var(--cream) 72%,transparent)}
 
 /* ============ KENAPA KONEO (about grid) ============ */
 #voice{background:var(--navy);color:var(--cream);overflow:hidden}

@@ -2,10 +2,11 @@ import { useState } from 'react'
 import { LINKS } from '../config'
 
 const items = [
-  { href: '#menu', label: 'Menu' },
-  { href: '#voice', label: 'Kenapa Koneo' },
-  { href: '#story', label: 'Cerita' },
-  { href: '#visit', label: 'Kunjungi' },
+  { href: '#menu',    label: 'Menu' },
+  { href: '#voice',   label: 'Kenapa Koneo' },
+  { href: '#story',   label: 'Cerita' },
+  { href: '#goes-to', label: 'Goes To' },
+  { href: '#visit',   label: 'Kunjungi' },
 ]
 
 export default function Nav() {

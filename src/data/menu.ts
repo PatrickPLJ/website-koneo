@@ -2,12 +2,10 @@ export type Category =
   | 'bingsoo'
   | 'rice_bowl'
   | 'bite'
-  | 'coffee'
-  | 'sweety'
-  | 'tea'
-  | 'milky'
-  | 'mojito'
+  | 'beverage'
   | 'toppings'
+
+export type BeverageSub = 'coffee' | 'sweety' | 'tea' | 'milky' | 'mojito'
 
 export interface Variant {
   label: string
@@ -23,7 +21,16 @@ export interface MenuItem {
   variants?: Variant[]
   fav?: boolean
   cat: Category
+  sub?: BeverageSub
 }
+
+export const BEVERAGE_GROUPS: { sub: BeverageSub; label: string; icon: string }[] = [
+  { sub: 'coffee',  label: 'Coffee',  icon: '☕' },
+  { sub: 'sweety',  label: 'Sweety',  icon: '🧁' },
+  { sub: 'tea',     label: 'Tea',     icon: '🍵' },
+  { sub: 'milky',   label: 'Milky',   icon: '🧋' },
+  { sub: 'mojito',  label: 'Mojito',  icon: '🍹' },
+]
 
 export const MENU: MenuItem[] = [
   // ---------- BINGSOO ----------
@@ -187,135 +194,39 @@ export const MENU: MenuItem[] = [
     price: 'Rp28.000',
   },
 
-  // ---------- COFFEE ----------
-  {
-    cat: 'coffee', icon: '☕', name: 'Americano', says: '/ Black Coffee',
-    desc: 'Espresso murni yang bold dan segar.',
-    price: 'Rp20.000',
-  },
-  {
-    cat: 'coffee', icon: '☕', name: 'Latte', says: '/ Milk Coffee',
-    desc: 'Espresso lembut dengan susu steamed yang creamy.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'coffee', icon: '🍬', name: 'Brown Sugar', says: '/ Brown Sugar Latte',
-    desc: 'Latte dengan sirup gula merah yang karamel dan manis.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'coffee', icon: '🍯', name: 'Honicano', says: '/ Honey Americano',
-    desc: 'Americano dengan sentuhan madu alami yang menyegarkan.',
-    price: 'Rp28.000',
-  },
-  {
-    cat: 'coffee', icon: '🫐', name: 'Bericano', says: '/ Berry Americano',
-    desc: 'Americano dengan saus berry segar yang unik dan asam-manis.',
-    price: 'Rp28.000',
-  },
-  {
-    cat: 'coffee', icon: '🧊', name: 'Cold Brew', says: '/ Cold Brew',
-    desc: 'Kopi cold brew yang diseduh 12 jam. Smooth dan pekat.',
-    price: 'Rp20.000',
-  },
-  {
-    cat: 'coffee', icon: '🌰', name: 'Month Blanc', says: '/ Mont Blanc Latte',
-    desc: 'Latte dengan krim chestnut manis ala pastry Prancis.',
-    price: 'Rp30.000',
-  },
-  {
-    cat: 'coffee', icon: '🍵', name: 'Dirty Matcha', says: '/ Dirty Matcha',
-    desc: 'Espresso shot di atas matcha latte — pahit dan harum.',
-    price: 'Rp28.000',
-  },
+  // ---------- BEVERAGE — COFFEE ----------
+  { cat: 'beverage', sub: 'coffee', icon: '☕', name: 'Americano', says: '/ Black Coffee', desc: 'Espresso murni yang bold dan segar.', price: 'Rp20.000' },
+  { cat: 'beverage', sub: 'coffee', icon: '☕', name: 'Latte', says: '/ Milk Coffee', desc: 'Espresso lembut dengan susu steamed yang creamy.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'coffee', icon: '🍬', name: 'Brown Sugar', says: '/ Brown Sugar Latte', desc: 'Latte dengan sirup gula merah yang karamel dan manis.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'coffee', icon: '🍯', name: 'Honicano', says: '/ Honey Americano', desc: 'Americano dengan sentuhan madu alami yang menyegarkan.', price: 'Rp28.000' },
+  { cat: 'beverage', sub: 'coffee', icon: '🫐', name: 'Bericano', says: '/ Berry Americano', desc: 'Americano dengan saus berry segar yang unik dan asam-manis.', price: 'Rp28.000' },
+  { cat: 'beverage', sub: 'coffee', icon: '🧊', name: 'Cold Brew', says: '/ Cold Brew', desc: 'Kopi cold brew yang diseduh 12 jam. Smooth dan pekat.', price: 'Rp20.000' },
+  { cat: 'beverage', sub: 'coffee', icon: '🌰', name: 'Month Blanc', says: '/ Mont Blanc Latte', desc: 'Latte dengan krim chestnut manis ala pastry Prancis.', price: 'Rp30.000' },
+  { cat: 'beverage', sub: 'coffee', icon: '🍵', name: 'Dirty Matcha', says: '/ Dirty Matcha', desc: 'Espresso shot di atas matcha latte — pahit dan harum.', price: 'Rp28.000' },
 
-  // ---------- SWEETY ----------
-  {
-    cat: 'sweety', icon: '❤️', name: 'Red Velvet', says: '/ Red Velvet',
-    desc: 'Minuman creamy dengan rasa red velvet yang mewah.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'sweety', icon: '🍫', name: 'Chocolatte', says: '/ Chocolate Latte',
-    desc: 'Latte cokelat lembut yang kaya rasa dan menghangatkan.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'sweety', icon: '🟣', name: 'Taro', says: '/ Taro',
-    desc: 'Minuman taro ungu yang creamy dan manis alami.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'sweety', icon: '🍵', name: 'Strawberry Matcha', says: '/ Strawberry Matcha',
-    desc: 'Matcha segar dipadukan dengan stroberi — manis seimbang.',
-    price: 'Rp28.000',
-  },
+  // ---------- BEVERAGE — SWEETY ----------
+  { cat: 'beverage', sub: 'sweety', icon: '❤️', name: 'Red Velvet', says: '/ Red Velvet', desc: 'Minuman creamy dengan rasa red velvet yang mewah.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'sweety', icon: '🍫', name: 'Chocolatte', says: '/ Chocolate Latte', desc: 'Latte cokelat lembut yang kaya rasa dan menghangatkan.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'sweety', icon: '🟣', name: 'Taro', says: '/ Taro', desc: 'Minuman taro ungu yang creamy dan manis alami.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'sweety', icon: '🍵', name: 'Strawberry Matcha', says: '/ Strawberry Matcha', desc: 'Matcha segar dipadukan dengan stroberi — manis seimbang.', price: 'Rp28.000' },
 
-  // ---------- TEA ----------
-  {
-    cat: 'tea', icon: '🍵', name: 'Orisinal Tea', says: '/ Original Tea',
-    desc: 'Teh tawar segar, murni tanpa tambahan rasa.',
-    price: 'Rp20.000',
-  },
-  {
-    cat: 'tea', icon: '🍈', name: 'Lychee Tea', says: '/ Lychee Tea',
-    desc: 'Teh dengan aroma lychee yang harum dan menyegarkan.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'tea', icon: '🍋', name: 'Lemon Tea', says: '/ Lemon Tea',
-    desc: 'Teh lemon asam-segar yang cocok untuk cuaca panas Bali.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'tea', icon: '🥭', name: 'Manggo Tea', says: '/ Mango Tea',
-    desc: 'Teh dengan rasa mangga manis tropis yang segar.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'tea', icon: '🧋', name: 'Milk Tea', says: '/ Milk Tea',
-    desc: 'Teh susu klasik yang creamy dan menenangkan.',
-    price: 'Rp28.000',
-  },
+  // ---------- BEVERAGE — TEA ----------
+  { cat: 'beverage', sub: 'tea', icon: '🍵', name: 'Orisinal Tea', says: '/ Original Tea', desc: 'Teh tawar segar, murni tanpa tambahan rasa.', price: 'Rp20.000' },
+  { cat: 'beverage', sub: 'tea', icon: '🍈', name: 'Lychee Tea', says: '/ Lychee Tea', desc: 'Teh dengan aroma lychee yang harum dan menyegarkan.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'tea', icon: '🍋', name: 'Lemon Tea', says: '/ Lemon Tea', desc: 'Teh lemon asam-segar yang cocok untuk cuaca panas Bali.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'tea', icon: '🥭', name: 'Manggo Tea', says: '/ Mango Tea', desc: 'Teh dengan rasa mangga manis tropis yang segar.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'tea', icon: '🧋', name: 'Milk Tea', says: '/ Milk Tea', desc: 'Teh susu klasik yang creamy dan menenangkan.', price: 'Rp28.000' },
 
-  // ---------- MILKY ----------
-  {
-    cat: 'milky', icon: '🍓', name: 'Strawberry Milk', says: '/ Strawberry',
-    desc: 'Susu segar dengan rasa stroberi yang manis dan lembut.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'milky', icon: '🥭', name: 'Manggo Milk', says: '/ Mango',
-    desc: 'Susu mangga tropis yang manis dan menyegarkan.',
-    price: 'Rp25.000',
-  },
+  // ---------- BEVERAGE — MILKY ----------
+  { cat: 'beverage', sub: 'milky', icon: '🍓', name: 'Strawberry Milk', says: '/ Strawberry', desc: 'Susu segar dengan rasa stroberi yang manis dan lembut.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'milky', icon: '🥭', name: 'Manggo Milk', says: '/ Mango', desc: 'Susu mangga tropis yang manis dan menyegarkan.', price: 'Rp25.000' },
 
-  // ---------- MOJITO ----------
-  {
-    cat: 'mojito', icon: '🍎', name: 'Apple Mojito', says: '/ Apple',
-    desc: 'Mojito soda segar dengan rasa apel yang ringan.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'mojito', icon: '🥭', name: 'Manggo Mojito', says: '/ Mango',
-    desc: 'Mojito mangga tropis — segar dan bikin semangat.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'mojito', icon: '🍇', name: 'Grape Mojito', says: '/ Grape',
-    desc: 'Mojito anggur ungu dengan rasa asam-manis yang unik.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'mojito', icon: '🍓', name: 'Strawberry Mojito', says: '/ Strawberry',
-    desc: 'Mojito stroberi segar yang melepas dahaga di Bali.',
-    price: 'Rp25.000',
-  },
-  {
-    cat: 'mojito', icon: '🍈', name: 'Lychee Mojito', says: '/ Lychee',
-    desc: 'Mojito lychee harum yang ringan dan menyegarkan.',
-    price: 'Rp25.000',
-  },
+  // ---------- BEVERAGE — MOJITO ----------
+  { cat: 'beverage', sub: 'mojito', icon: '🍎', name: 'Apple Mojito', says: '/ Apple', desc: 'Mojito soda segar dengan rasa apel yang ringan.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'mojito', icon: '🥭', name: 'Manggo Mojito', says: '/ Mango', desc: 'Mojito mangga tropis — segar dan bikin semangat.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'mojito', icon: '🍇', name: 'Grape Mojito', says: '/ Grape', desc: 'Mojito anggur ungu dengan rasa asam-manis yang unik.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'mojito', icon: '🍓', name: 'Strawberry Mojito', says: '/ Strawberry', desc: 'Mojito stroberi segar yang melepas dahaga di Bali.', price: 'Rp25.000' },
+  { cat: 'beverage', sub: 'mojito', icon: '🍈', name: 'Lychee Mojito', says: '/ Lychee', desc: 'Mojito lychee harum yang ringan dan menyegarkan.', price: 'Rp25.000' },
 
   // ---------- TOPPINGS ----------
   { cat: 'toppings', icon: '🍓', name: 'Strawberry Fruits', price: 'Rp5.000' },
