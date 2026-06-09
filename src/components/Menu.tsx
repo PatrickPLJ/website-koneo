@@ -22,7 +22,7 @@ export default function Menu() {
             <h2 className="display">Menu Koneo</h2>
           </div>
           <p style={{ maxWidth: '34ch', opacity: 0.75 }}>
-            Es serut signature, makanan berat ala Korea, sampai minuman seger. Harga mulai 20rb.
+            Bingsoo Korea signature, makanan berat ala Korea, sampai minuman seger. Harga mulai 20rb.
           </p>
         </div>
 

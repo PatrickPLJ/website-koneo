@@ -1,5 +1,5 @@
 const feats = [
-  { icon: '❄️', title: 'Bingsoo Pertama di Bali', desc: 'Korean Bingsoo Bar pertama di Pulau Dewata. Es serut autentik yang lembut dan lumer.' },
+  { icon: '❄️', title: 'Bingsoo Pertama di Bali', desc: 'Korean Bingsoo Bar pertama di Pulau Dewata. Bingsoo Korea autentik yang lembut dan lumer.' },
   { icon: '🧊', title: 'Lembut & Menyegarkan', desc: 'Tekstur halus yang lumer di mulut — pas banget buat ngademin cuaca panas Bali.' },
   { icon: '💸', title: 'Ramah di Kantong', desc: 'Menu mulai 20rb-an aja. Puas nyobain banyak varian tanpa bikin dompet nangis.' },
   { icon: '📸', title: 'Spot Instagramable', desc: 'Tiap sudut dibuat aesthetic, indoor maupun outdoor — siap jadi konten kamu.' },
@@ -14,7 +14,7 @@ export default function About() {
       <div className="wrap">
         <div className="about-head reveal">
           <span className="eyebrow">Kenapa Koneo</span>
-          <h2 className="display">Bukan sekadar es serut biasa.</h2>
+          <h2 className="display">Bukan sekadar bingsoo Korea biasa.</h2>
           <p>Koleksi alasan kenapa Koneo jadi tempat ngadem favorit di Denpasar — tiap detail dibuat dengan niat, rasa, dan gaya.</p>
         </div>
         <div className="feat-grid">

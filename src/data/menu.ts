@@ -14,7 +14,7 @@ export const MENU: MenuItem[] = [
   // ---------- BINGSOO ----------
   {
     cat: 'bingsoo', icon: '🍓', name: 'Stralgi', says: '/ Strawberry', fav: true,
-    desc: 'Es serut lembut, stroberi segar, saus stroberi melimpah. Favorit semua orang.',
+    desc: 'Bingsoo Korea lembut, stroberi segar, saus stroberi melimpah. Favorit semua orang.',
     price: 'Rp35.000',
   },
   {
