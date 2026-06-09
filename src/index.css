@@ -126,10 +126,7 @@ section{position:relative}
   border-radius:var(--r);padding:1.4rem;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s;
 }
 .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--navy)}
-.card .ico{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:1rem;background:var(--ice)}
-.card[data-c="bingsoo"] .ico{background:#dfeaf6}
-.card[data-c="food"] .ico{background:#f3e3cf}
-.card[data-c="drink"] .ico{background:#e3efda}
+.card .ico{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:1rem;background:var(--ico-bg,var(--ice))}
 .card h3{font-family:"Fraunces",serif;font-size:1.32rem;font-weight:600;display:flex;align-items:baseline;gap:.4rem;flex-wrap:wrap}
 .card .says{font-size:.72rem;font-weight:600;color:var(--berry);letter-spacing:.04em}
 .card p{font-size:.86rem;color:color-mix(in srgb,var(--navy) 72%,transparent);margin:.4rem 0 1rem}
@@ -140,6 +137,13 @@ section{position:relative}
 .variant-label{font:600 .75rem/1 "Plus Jakarta Sans";letter-spacing:.06em;text-transform:uppercase;color:color-mix(in srgb,var(--navy) 60%,transparent)}
 .variant-row .price{font-size:.95rem}
 .variants .fav{align-self:flex-start;margin-top:.3rem;font:700 .62rem/1 "Plus Jakarta Sans";letter-spacing:.1em;text-transform:uppercase;color:var(--berry);border:1px solid var(--berry);padding:.2rem .4rem;border-radius:6px}
+.topping-price{color:var(--berry)}
+.soft-ice-banner{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;background:color-mix(in srgb,var(--navy) 6%,transparent);border:1.5px solid color-mix(in srgb,var(--navy) 14%,transparent);border-radius:var(--r);padding:1rem 1.4rem;margin-bottom:2rem}
+.soft-ice-badge{font:700 .7rem/1 "Plus Jakarta Sans";letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--navy);padding:.3rem .6rem;border-radius:6px;white-space:nowrap}
+.soft-ice-banner div{flex:1;display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap}
+.soft-ice-banner strong{font-family:"Fraunces",serif;font-size:1.05rem;font-weight:600;white-space:nowrap}
+.soft-ice-banner span{font-size:.84rem;color:color-mix(in srgb,var(--navy) 68%,transparent)}
+.soft-ice-time{font:700 .82rem/1 "Plus Jakarta Sans";color:var(--berry);white-space:nowrap}
 .is-hidden{display:none}
 
 /* ============ KENAPA KONEO (about grid) ============ */
