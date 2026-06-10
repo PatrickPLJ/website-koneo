@@ -5,7 +5,7 @@
 // Nomor WhatsApp untuk tombol "Pesan via WhatsApp".
 // Format: kode negara TANPA "+" lalu nomor tanpa 0 di depan.
 // Contoh 0812-3456-7890  ->  '6281234567890'
-export const WA_NUMBER = '6281234567890'
+export const WA_NUMBER = '6281228827930'
 
 export const WA_TEXT =
   'Halo Koneo! 🍧 Aku mau pesan bingsoo. Boleh info menu & ketersediaannya?'
