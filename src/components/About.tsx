@@ -4,7 +4,7 @@ const feats = [
   { icon: '💸', title: 'Ramah di Kantong', desc: 'Menu mulai 20rb-an aja. Puas nyobain banyak varian tanpa bikin dompet nangis.' },
   { icon: '📸', title: 'Spot Instagramable', desc: 'Tiap sudut dibuat aesthetic, indoor maupun outdoor — siap jadi konten kamu.' },
   { icon: '🍽️', title: 'Bukan Cuma Bingsoo', desc: 'Ada makanan berat ala Korea, cemilan gurih, sampai minuman segar.' },
-  { icon: '⭐', title: 'Dicintai Pelanggan', desc: 'Rating 4.7 dari 497 ulasan Google. Banyak yang ketagihan dan balik lagi.' },
+  { icon: '⭐', title: 'Dicintai Pelanggan', desc: 'Rating 4.9 dari 961 ulasan Google. Banyak yang ketagihan dan balik lagi.' },
 ]
 
 export default function About() {

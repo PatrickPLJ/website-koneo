@@ -15,7 +15,7 @@ export default function Hero() {
             <a href="#visit" className="btn ghost">Cari Lokasi</a>
           </div>
           <div className="hero-meta reveal">
-            <div><b>4.7★</b><span>497 Ulasan Google</span></div>
+            <div><b>4.9★</b><span>961 Ulasan Google</span></div>
             <div><b>10–22</b><span>Buka Tiap Hari · WITA</span></div>
             <div><b>#1</b><span>Bingsoo Bar di Bali</span></div>
           </div>
