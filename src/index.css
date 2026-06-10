@@ -181,12 +181,22 @@ section{position:relative}
 .feat p{font-size:.9rem;color:color-mix(in srgb,var(--cream) 76%,transparent);margin-top:.45rem;max-width:36ch}
 
 /* ============ STORY / REVIEWS ============ */
-#story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
-.story-card{background:var(--cream-soft);border:1.5px solid color-mix(in srgb,var(--navy) 14%,transparent);border-radius:var(--r);padding:clamp(1.6rem,3vw,2.4rem)}
-.quote{font-family:"Fraunces",serif;font-style:italic;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.25}
-.stars{color:var(--honey);font-size:1.3rem;letter-spacing:.15em}
-.review-row{display:flex;gap:1rem;align-items:center;margin-top:1.6rem}
-.avatar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:var(--cream);background:var(--berry)}
+.story-intro{display:grid;grid-template-columns:1fr auto;gap:clamp(2rem,5vw,4rem);align-items:start;margin-bottom:clamp(2rem,4vw,3rem)}
+.rating-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--cream-soft);border:1.5px solid color-mix(in srgb,var(--navy) 14%,transparent);border-radius:var(--r);padding:1.6rem 2rem;min-width:140px;text-align:center}
+.rating-score{font-family:"Fraunces",serif;font-size:3.2rem;font-weight:900;color:var(--navy);line-height:1}
+.rating-stars{color:var(--honey);font-size:1.1rem;letter-spacing:.1em;margin:.3rem 0}
+.rating-label{font:700 .68rem/1 "Plus Jakarta Sans";letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--navy) 55%,transparent)}
+.rating-count{font-size:.8rem;opacity:.6;margin-top:.2rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.1rem}
+.review-card{background:var(--cream-soft);border:1.5px solid color-mix(in srgb,var(--navy) 12%,transparent);border-radius:var(--r);padding:1.4rem;display:flex;flex-direction:column;gap:.8rem;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
+.review-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--navy)}
+.quote{font-family:"Fraunces",serif;font-style:italic;font-size:clamp(.95rem,1.5vw,1.08rem);line-height:1.55;flex:1}
+.stars{color:var(--honey);font-size:1.05rem;letter-spacing:.1em}
+.review-row{display:flex;gap:.8rem;align-items:center;margin-top:auto}
+.review-row .google-icon{margin-left:auto;flex-shrink:0}
+.review-meta{font-size:.78rem;opacity:.6;margin-top:.1rem}
+.avatar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.82rem;color:var(--cream);background:var(--berry);flex-shrink:0}
+@media(max-width:640px){.story-intro{grid-template-columns:1fr}.rating-badge{flex-direction:row;gap:1rem;justify-content:flex-start;min-width:unset}.rating-score{font-size:2.4rem}}
 
 /* ============ VISIT ============ */
 #visit{background:var(--paper)}
