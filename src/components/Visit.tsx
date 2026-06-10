@@ -16,7 +16,7 @@ export default function Visit() {
               <li><span className="k">Alamat</span><span className="v">Jl. Nangka Utara No. 189<small>Tonja, Denpasar Utara, Bali 83661</small></span></li>
               <li><span className="k">Jam Buka</span><span className="v">Setiap hari · 10.00–22.00 WITA<small>Last order 21.30 WITA</small></span></li>
               <li><span className="k">Suasana</span><span className="v">Indoor &amp; Outdoor · Aesthetic<small>Free Wi-Fi · Instagramable</small></span></li>
-              <li><span className="k">Pesan</span><span className="v">GoFood · Datang Langsung<small>Range harga 40rb–100rb</small></span></li>
+              <li><span className="k">Hubungi</span><span className="v">WhatsApp · Datang Langsung<small>GoFood · Pesan Online</small></span></li>
             </ul>
             <div className="hero-cta" style={{ marginTop: '1.8rem' }}>
               <a href={waLink()} target="_blank" rel="noopener" className="btn">Pesan via WhatsApp</a>

@@ -1,8 +1,8 @@
 const phrases = [
-  'Bingsoo Korea Pertama di Bali',
-  'Lembut · Segar · Ramah Kantong',
-  'Spot Paling Instagramable',
-  'Buka Tiap Hari 10—22',
+  'First Bingsoo Bar in Bali',
+  '10.00–22.00',
+  'Closed Order 21.30',
+  'Jl. Nangka Utara 189 Denpasar',
 ]
 
 export default function Marquee() {
