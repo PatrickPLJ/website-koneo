@@ -144,6 +144,47 @@ section{position:relative}
 .bev-group-title{font-family:"Fraunces",serif;font-size:1.4rem;font-weight:600;display:flex;align-items:center;gap:.6rem;margin-bottom:1.1rem;padding-bottom:.6rem;border-bottom:1.5px solid color-mix(in srgb,var(--navy) 12%,transparent)}
 .bev-group-icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:1.2rem;background:color-mix(in srgb,var(--navy) 8%,transparent)}
 .is-hidden{display:none}
+.card-clickable{cursor:pointer;position:relative}
+.card-detail-hint{display:block;font:600 .72rem/1 "Plus Jakarta Sans";letter-spacing:.06em;text-transform:uppercase;color:color-mix(in srgb,var(--navy) 40%,transparent);margin-top:.9rem;opacity:0;transition:opacity .25s}
+.card-clickable:hover .card-detail-hint{opacity:1}
+
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(5,20,45,.55);backdrop-filter:blur(6px);z-index:200;display:flex;align-items:flex-end;justify-content:center;padding:0;animation:fadeIn .2s var(--ease)}
+@media(min-width:640px){.modal-overlay{align-items:center;padding:1.5rem}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-box{background:var(--cream);border-radius:24px 24px 0 0;width:100%;max-width:520px;max-height:92dvh;overflow-y:auto;position:relative;animation:slideUp .3s var(--ease)}
+@media(min-width:640px){.modal-box{border-radius:var(--r);max-height:85dvh}}
+@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--navy) 18%,transparent);background:var(--cream);font-size:1rem;cursor:pointer;display:grid;place-items:center;color:var(--navy);z-index:2;transition:.2s}
+.modal-close:hover{background:var(--navy);color:var(--cream)}
+.modal-img{height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;border-radius:24px 24px 0 0;font-size:4rem}
+.modal-img[data-c="bingsoo"]{background:#dfeaf6}
+.modal-img[data-c="rice_bowl"]{background:#f3e3cf}
+.modal-img[data-c="bite"]{background:#f3e3cf}
+.modal-img[data-c="beverage"]{background:#e3efda}
+.modal-img[data-c="toppings"]{background:#fef3cd}
+@media(min-width:640px){.modal-img{border-radius:var(--r) var(--r) 0 0}}
+.modal-img-icon{font-size:4.5rem;line-height:1}
+.modal-img-hint{font:500 .75rem/1 "Plus Jakarta Sans";opacity:.45;letter-spacing:.04em}
+.modal-body{padding:1.4rem 1.6rem 2rem}
+.modal-cat-badge{display:inline-block;font:700 .68rem/1 "Plus Jakarta Sans";letter-spacing:.1em;text-transform:uppercase;padding:.3rem .65rem;border-radius:6px;margin-bottom:.8rem}
+.modal-cat-badge[data-c="bingsoo"]{background:#dfeaf6;color:#0d4080}
+.modal-cat-badge[data-c="rice_bowl"]{background:#f3e3cf;color:#7a4520}
+.modal-cat-badge[data-c="bite"]{background:#f3e3cf;color:#7a4520}
+.modal-cat-badge[data-c="beverage"]{background:#e3efda;color:#2a5e30}
+.modal-cat-badge[data-c="toppings"]{background:#fef3cd;color:#7a5f10}
+.modal-title{font-family:"Fraunces",serif;font-size:1.7rem;font-weight:700;color:var(--navy);line-height:1.15}
+.modal-says{font:600 .78rem/1 "Plus Jakarta Sans";color:var(--berry);letter-spacing:.06em;margin-top:.3rem}
+.modal-desc{font-size:.92rem;color:color-mix(in srgb,var(--navy) 72%,transparent);margin-top:.7rem;line-height:1.6}
+.modal-price-block{margin-top:1.2rem;padding-top:1.2rem;border-top:1.5px solid color-mix(in srgb,var(--navy) 10%,transparent)}
+.modal-price-label{font:700 .7rem/1 "Plus Jakarta Sans";letter-spacing:.1em;text-transform:uppercase;opacity:.5;margin-bottom:.6rem;display:block}
+.modal-variants{display:flex;flex-direction:column;gap:.5rem}
+.modal-variant{display:flex;align-items:center;justify-content:space-between;background:var(--cream-soft);border:1.5px solid color-mix(in srgb,var(--navy) 10%,transparent);border-radius:10px;padding:.65rem 1rem}
+.modal-variant-name{font:700 .82rem/1 "Plus Jakarta Sans";letter-spacing:.06em;text-transform:uppercase;color:color-mix(in srgb,var(--navy) 60%,transparent)}
+.modal-variant-price{font-family:"Fraunces",serif;font-weight:700;font-size:1.05rem;color:var(--navy)}
+.modal-single-price{display:flex;align-items:center;justify-content:space-between}
+.modal-price-value{font-family:"Fraunces",serif;font-weight:700;font-size:1.3rem;color:var(--navy)}
+.modal-fav-badge{display:inline-block;margin-top:.9rem;font:700 .72rem/1 "Plus Jakarta Sans";letter-spacing:.1em;text-transform:uppercase;color:var(--berry);border:1.5px solid var(--berry);padding:.3rem .65rem;border-radius:8px}
 
 /* ============ KONEO GOES TO ============ */
 .goes-to{background:var(--navy);color:var(--cream);overflow:hidden;position:relative}

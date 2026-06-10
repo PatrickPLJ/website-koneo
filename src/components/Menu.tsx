@@ -1,5 +1,6 @@
 import { useState, type CSSProperties } from 'react'
-import { MENU, BEVERAGE_GROUPS, type Category, type BeverageSub } from '../data/menu'
+import { MENU, BEVERAGE_GROUPS, type Category, type BeverageSub, type MenuItem } from '../data/menu'
+import MenuModal from './MenuModal'
 
 type Filter = 'all' | Category
 
@@ -28,13 +29,18 @@ const subColor: Record<BeverageSub, string> = {
   mojito: '#d6f0e8',
 }
 
-function MenuCard({ item }: { item: typeof MENU[number] }) {
+function MenuCard({ item, onClick }: { item: MenuItem; onClick: () => void }) {
   const icoColor = item.sub ? subColor[item.sub] : catColor[item.cat]
   return (
     <article
-      className="card reveal"
+      className="card reveal card-clickable"
       data-c={item.cat}
       style={{ '--ico-bg': icoColor } as CSSProperties}
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && onClick()}
+      aria-label={`Lihat detail ${item.name}`}
     >
       <div className="ico">{item.icon}</div>
       <h3>
@@ -58,12 +64,14 @@ function MenuCard({ item }: { item: typeof MENU[number] }) {
           {item.fav && <span className="fav">Best Seller</span>}
         </div>
       )}
+      <span className="card-detail-hint">Tap untuk detail →</span>
     </article>
   )
 }
 
 export default function Menu() {
   const [active, setActive] = useState<Filter>('all')
+  const [selected, setSelected] = useState<MenuItem | null>(null)
 
   const showBeverage = active === 'all' || active === 'beverage'
   const nonBeverageItems = MENU.filter(
@@ -95,14 +103,14 @@ export default function Menu() {
           ))}
         </div>
 
-        {/* Non-beverage items */}
         {nonBeverageItems.length > 0 && (
           <div className="menu-grid">
-            {nonBeverageItems.map((item, i) => <MenuCard key={i} item={item} />)}
+            {nonBeverageItems.map((item, i) => (
+              <MenuCard key={i} item={item} onClick={() => setSelected(item)} />
+            ))}
           </div>
         )}
 
-        {/* Beverage section grouped by sub-category */}
         {showBeverage && (
           <div className="beverage-section">
             {BEVERAGE_GROUPS.map((group) => {
@@ -116,7 +124,9 @@ export default function Menu() {
                     {group.label}
                   </h3>
                   <div className="menu-grid">
-                    {items.map((item, i) => <MenuCard key={i} item={item} />)}
+                    {items.map((item, i) => (
+                      <MenuCard key={i} item={item} onClick={() => setSelected(item)} />
+                    ))}
                   </div>
                 </div>
               )
@@ -124,6 +134,10 @@ export default function Menu() {
           </div>
         )}
       </div>
+
+      {selected && (
+        <MenuModal item={selected} onClose={() => setSelected(null)} />
+      )}
     </section>
   )
 }

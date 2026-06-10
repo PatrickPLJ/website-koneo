@@ -1,6 +1,6 @@
 const phrases = [
   'First Bingsoo Bar in Bali',
-  '10.00–22.00',
+  'Open Daily 10.00–22.00',
   'Closed Order 21.30',
   'Jl. Nangka Utara 189 Denpasar',
 ]
