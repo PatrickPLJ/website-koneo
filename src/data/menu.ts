@@ -47,8 +47,8 @@ export const MENU: MenuItem[] = [
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
     images: [
-      { label: 'Regular', src: '/menu/stralgy-regular.jpg' },
-      { label: 'Lite',    src: '/menu/stralgy-lite.jpg' },
+      { label: 'Regular', src: '/website-koneo/menu/stralgy-regular.jpg' },
+      { label: 'Lite',    src: '/website-koneo/menu/stralgy-lite.jpg' },
     ],
   },
   {
@@ -56,21 +56,21 @@ export const MENU: MenuItem[] = [
     desc: 'Saus blackcurrant ungu yang asam-manis, super menyegarkan.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
-    images: [{ label: 'Regular', src: '/menu/bleucurrent-regular.jpg' }],
+    images: [{ label: 'Regular', src: '/website-koneo/menu/bleucurrent-regular.jpg' }],
   },
   {
     cat: 'bingsoo', icon: '🍪', name: 'Biscoff', says: '/ Biscoff',
     desc: 'Krim biscoff karamel dengan remahan biskuit lotus. Manis yang pas.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
-    images: [{ label: 'Regular', src: '/menu/biscoff-regular.jpg' }],
+    images: [{ label: 'Regular', src: '/website-koneo/menu/biscoff-regular.jpg' }],
   },
   {
     cat: 'bingsoo', icon: '🥭', name: 'Mango', says: '/ Mango',
     desc: 'Potongan mangga segar di atas bingsoo lembut. Manis tropis yang segar.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
-    images: [{ label: 'Regular', src: '/menu/mango-regular.jpg' }],
+    images: [{ label: 'Regular', src: '/website-koneo/menu/mango-regular.jpg' }],
   },
   {
     cat: 'bingsoo', icon: '☕', name: 'Tiramissu', says: '/ Tiramisu',
@@ -89,14 +89,14 @@ export const MENU: MenuItem[] = [
     desc: 'Cokelat lembut dengan cookies and cream yang renyah. Wajib coba.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
-    images: [{ label: 'Lite', src: '/menu/chocolist-lite.jpg' }],
+    images: [{ label: 'Lite', src: '/website-koneo/menu/chocolist-lite.jpg' }],
   },
   {
     cat: 'bingsoo', icon: '🍦', name: 'Kukissnkrim', says: '/ Cookies n Cream',
     desc: 'Perpaduan kukis renyah dengan krim lembut di atas bingsoo segar.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
-    images: [{ label: 'Regular', src: '/menu/kukissnkrim-regular.jpg' }],
+    images: [{ label: 'Regular', src: '/website-koneo/menu/kukissnkrim-regular.jpg' }],
   },
   {
     cat: 'bingsoo', icon: '🍵', name: 'Matcha', says: '/ Matcha',
@@ -104,8 +104,8 @@ export const MENU: MenuItem[] = [
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
     images: [
-      { label: 'Regular', src: '/menu/matcha-regular.jpg' },
-      { label: 'Lite',    src: '/menu/matcha-lite.jpg' },
+      { label: 'Regular', src: '/website-koneo/menu/matcha-regular.jpg' },
+      { label: 'Lite',    src: '/website-koneo/menu/matcha-lite.jpg' },
     ],
   },
 
