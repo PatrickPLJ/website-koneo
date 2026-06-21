@@ -1,26 +1,39 @@
-import KoneoLogo from './KoneoLogo'
+import MipoLogo from './MipoLogo'
 
 export default function Hero() {
   return (
-    <section className="hero">
-      <div className="wrap hero-center">
-        <div className="hero-art reveal">
-          <KoneoLogo />
-        </div>
-        <div className="hero-copy">
-          <span className="hero-tag reveal"><span className="pulse" />First Korean Bingsoo Bar in Bali</span>
-          <h1 className="display reveal">First Bingsoo Bar <em>in Bali.</em></h1>
-          <p className="hero-sub reveal">
-            Bingsoo yang lembut, segar, dan ramah kantong — disajikan di sudut paling <em>aesthetic</em> Denpasar. Mulai dari 20rb-an aja.
+    <section className="mipo-hero" id="top">
+      <div className="hero-bg">
+        <div className="hero-blob h-blob1" />
+        <div className="hero-blob h-blob2" />
+        <div className="hero-blob h-blob3" />
+      </div>
+      <div className="wrap hero-inner">
+        <div className="hero-content reveal">
+          <span className="hero-eyebrow">Welcome to</span>
+          <MipoLogo className="hero-logo" />
+          <p className="hero-tagline">
+            Creating memorable experiences through <em>premium food &amp; events</em>
           </p>
-          <div className="hero-cta reveal">
-            <a href="#menu" className="btn">Lihat Menu</a>
-            <a href="#visit" className="btn ghost">Cari Lokasi</a>
+          <div className="hero-btns">
+            <a href="#pricelist" className="mipo-btn">View Price List</a>
+            <a href="#contact" className="mipo-btn ghost">Get in Touch</a>
           </div>
-          <div className="hero-meta reveal">
-            <div><b>4.9</b><span>961 Ulasan Google</span></div>
-            <div><b>10–22</b><span>Buka Tiap Hari · WITA</span></div>
-            <div><b>#1</b><span>Bingsoo Bar di Bali</span></div>
+        </div>
+        <div className="hero-stats reveal">
+          <div className="stat-item">
+            <b>500+</b>
+            <span>Events Served</span>
+          </div>
+          <div className="stat-divider" />
+          <div className="stat-item">
+            <b>2</b>
+            <span>Product Lines</span>
+          </div>
+          <div className="stat-divider" />
+          <div className="stat-item">
+            <b>100%</b>
+            <span>Quality Promise</span>
           </div>
         </div>
       </div>

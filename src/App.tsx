@@ -1,11 +1,9 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import Marquee from './components/Marquee'
-import Menu from './components/Menu'
+import Brands from './components/Brands'
+import PriceList from './components/PriceList'
 import About from './components/About'
-import Story from './components/Story'
-import GoesTo from './components/GoesTo'
-import Visit from './components/Visit'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppFab from './components/WhatsAppFab'
 import { useReveal } from './hooks/useReveal'
@@ -17,12 +15,10 @@ export default function App() {
       <Nav />
       <main id="top">
         <Hero />
-        <Marquee />
-        <Menu />
+        <Brands />
+        <PriceList />
         <About />
-        <Story />
-        <GoesTo />
-        <Visit />
+        <Contact />
       </main>
       <WhatsAppFab />
       <Footer />

@@ -1,29 +1,56 @@
-const feats = [
-  { title: 'Bingsoo Pertama di Bali', desc: 'Korean Bingsoo Bar pertama di Pulau Dewata. Bingsoo Korea autentik yang lembut dan lumer.' },
-  { title: 'Lembut & Menyegarkan', desc: 'Tekstur halus yang lumer di mulut — pas banget buat ngademin cuaca panas Bali.' },
-  { title: 'Ramah di Kantong', desc: 'Menu mulai 20rb-an aja. Puas nyobain banyak varian tanpa bikin dompet nangis.' },
-  { title: 'Spot Instagramable', desc: 'Tiap sudut dibuat aesthetic, indoor maupun outdoor — siap jadi konten kamu.' },
-  { title: 'Bukan Cuma Bingsoo', desc: 'Ada makanan berat ala Korea, cemilan gurih, sampai minuman segar.' },
-  { title: 'Dicintai Pelanggan', desc: 'Rating 4.9 dari 961 ulasan Google. Banyak yang ketagihan dan balik lagi.' },
+const pillars = [
+  {
+    icon: '🎉',
+    title: 'Event Excellence',
+    desc: 'From intimate gatherings to large-scale corporate events, we bring premium food experiences on-site.',
+  },
+  {
+    icon: '🌟',
+    title: 'Quality First',
+    desc: 'Only the finest ingredients go into our products. Every serve is consistent, fresh, and delightful.',
+  },
+  {
+    icon: '🤝',
+    title: 'Reliable Service',
+    desc: 'Our professional staff handles setup, service, and cleanup — so you can focus on your event.',
+  },
+  {
+    icon: '📍',
+    title: 'Bali Based',
+    desc: 'Proudly rooted in Bali, serving clients across Denpasar and beyond with passion and care.',
+  },
 ]
 
 export default function About() {
   return (
-    <section id="voice" className="pad">
-      <div className="glow" aria-hidden="true" />
+    <section id="about" className="mipo-section">
       <div className="wrap">
-        <div className="about-head reveal">
-          <span className="eyebrow">Kenapa Koneo</span>
-          <h2 className="display">Bukan sekadar bingsoo Korea biasa.</h2>
-          <p>Koleksi alasan kenapa Koneo jadi tempat ngadem favorit di Denpasar — tiap detail dibuat dengan niat, rasa, dan gaya.</p>
-        </div>
-        <div className="feat-grid">
-          {feats.map((f) => (
-            <div className="feat reveal" key={f.title}>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
-            </div>
-          ))}
+        <div className="about-grid">
+          <div className="about-text reveal">
+            <span className="mipo-eyebrow">Who We Are</span>
+            <h2>Built on flavour, driven by experience</h2>
+            <p>
+              MIPO GROUP is a Bali-based food and events company operating the <strong>KONEO</strong> brand.
+              We specialise in bringing premium soft serve ice cream and handcrafted dimsum &amp; gyoza
+              directly to your events — fully staffed, fully equipped, fully delicious.
+            </p>
+            <p>
+              From weddings and birthday parties to corporate galas, our booth setups create moments
+              your guests will remember long after the last bite.
+            </p>
+            <a href="#contact" className="mipo-btn" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>Work With Us</a>
+          </div>
+          <div className="about-pillars reveal">
+            {pillars.map((p) => (
+              <div key={p.title} className="pillar-card">
+                <span className="pillar-icon">{p.icon}</span>
+                <div>
+                  <h4>{p.title}</h4>
+                  <p>{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,12 +1,11 @@
 import { useState } from 'react'
-import { LINKS } from '../config'
-import { menuImgUrl } from '../utils/imgUrl'
+import MipoLogo from './MipoLogo'
 
 const items = [
-  { href: '#menu',    label: 'Menu' },
-  { href: '#voice',   label: 'About Us' },
-  { href: '#goes-to', label: 'Catering' },
-  { href: '#visit',   label: 'Visit Us' },
+  { href: '#brands',    label: 'Our Brands' },
+  { href: '#pricelist', label: 'Price List' },
+  { href: '#about',     label: 'About' },
+  { href: '#contact',   label: 'Contact' },
 ]
 
 export default function Nav() {
@@ -14,28 +13,29 @@ export default function Nav() {
   const close = () => setOpen(false)
 
   return (
-    <header className="nav">
+    <header className="mipo-nav">
       <div className="wrap nav-in">
         <button
-          className="nav-toggle btn ghost"
-          aria-label={open ? 'Tutup menu' : 'Buka menu'}
+          className="nav-toggle"
+          aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >
           {open ? (
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4L16 16M16 4L4 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4L18 18M18 4L4 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
           ) : (
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
           )}
         </button>
         <a href="#top" className="brand-mark" onClick={close}>
-          <img src={menuImgUrl('/logo-text-v2.png')} alt="Koneo" className="brand-logo-img" />
+          <MipoLogo className="mipo-logo-svg" />
         </a>
         <nav className={`nav-links${open ? ' open' : ''}`}>
           {items.map((it) => (
             <a key={it.href} href={it.href} onClick={close}>{it.label}</a>
           ))}
         </nav>
+        <a href="#contact" className="nav-cta" onClick={close}>Get in Touch</a>
       </div>
     </header>
   )
