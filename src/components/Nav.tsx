@@ -16,14 +16,6 @@ export default function Nav() {
   return (
     <header className="nav">
       <div className="wrap nav-in">
-        <a href="#top" className="brand-mark" onClick={close}>
-          <img src={menuImgUrl('/logo-text-v2.png')} alt="Koneo" className="brand-logo-img" />
-        </a>
-        <nav className={`nav-links${open ? ' open' : ''}`}>
-          {items.map((it) => (
-            <a key={it.href} href={it.href} onClick={close}>{it.label}</a>
-          ))}
-        </nav>
         <button
           className="nav-toggle btn ghost"
           aria-label={open ? 'Tutup menu' : 'Buka menu'}
@@ -36,6 +28,14 @@ export default function Nav() {
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
           )}
         </button>
+        <a href="#top" className="brand-mark" onClick={close}>
+          <img src={menuImgUrl('/logo-text-v2.png')} alt="Koneo" className="brand-logo-img" />
+        </a>
+        <nav className={`nav-links${open ? ' open' : ''}`}>
+          {items.map((it) => (
+            <a key={it.href} href={it.href} onClick={close}>{it.label}</a>
+          ))}
+        </nav>
       </div>
     </header>
   )
