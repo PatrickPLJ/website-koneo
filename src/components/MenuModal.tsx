@@ -40,7 +40,7 @@ export default function MenuModal({ item, onClose }: Props) {
         <div className="modal-img" data-c={item.cat}>
           {currentImg ? (
             <img
-              src={currentImg.src}
+              src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${currentImg.src}`}
               alt={`${item.name} ${currentImg.label}`}
               className="modal-photo"
             />
