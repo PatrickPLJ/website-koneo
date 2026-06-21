@@ -17,7 +17,7 @@ export default function Nav() {
     <header className="nav">
       <div className="wrap nav-in">
         <a href="#top" className="brand-mark" onClick={close}>
-          <img src={menuImgUrl('/logo-text.png')} alt="Koneo" className="brand-logo-img" />
+          <img src={menuImgUrl('/logo-text-v2.png')} alt="Koneo" className="brand-logo-img" />
         </a>
         <nav className={`nav-links${open ? ' open' : ''}`}>
           {items.map((it) => (
