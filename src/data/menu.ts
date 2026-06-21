@@ -114,6 +114,7 @@ export const MENU: MenuItem[] = [
     cat: 'rice_bowl', icon: '🍗', name: 'Katsui Cikkin', says: '/ Katsu Chicken',
     desc: 'Ayam katsu renyah dengan saus khas di atas nasi hangat.',
     price: 'Rp30.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/katsui-cikkin.jpg' }],
   },
   {
     cat: 'rice_bowl', icon: '🍛', name: 'Katsui Kari', says: '/ Katsu Curry',
@@ -129,6 +130,7 @@ export const MENU: MenuItem[] = [
     cat: 'rice_bowl', icon: '🌶️', name: 'Bitteu Cikkin', says: '/ Spicy Chicken',
     desc: 'Ayam pedas lengkap dengan nasi dan salad. Berat tapi nagih.',
     price: 'Rp30.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/bitteu-cikkin.jpg' }],
   },
   {
     cat: 'rice_bowl', icon: '🍄', name: 'Bitteu Truffle', says: '/ Truffle Chicken',
@@ -139,6 +141,7 @@ export const MENU: MenuItem[] = [
     cat: 'rice_bowl', icon: '🥩', name: 'Bifbluegogy', says: '/ Beef Bulgogi',
     desc: 'Beef bulgogi gurih khas Korea, disajikan dengan nasi hangat.',
     price: 'Rp40.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/bifbluegogy.jpg' }],
   },
 
   // ---------- BITE ----------
@@ -146,11 +149,13 @@ export const MENU: MenuItem[] = [
     cat: 'bite', icon: '🔥', name: 'Wigs Hot', says: '/ Spicy Wings',
     desc: 'Sayap ayam saus pedas yang juicy. Cemilan paling laris.',
     price: 'Rp28.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/wigs-hot.jpg' }],
   },
   {
     cat: 'bite', icon: '🍯', name: 'Wigs Honey', says: '/ Honey Wings',
     desc: 'Sayap ayam saus madu — manis, lengket, bikin nambah.',
     price: 'Rp28.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/wigs-honey.jpg' }],
   },
   {
     cat: 'bite', icon: '🧀', name: 'Wigs Cheese', says: '/ Cheese Wings',
@@ -161,41 +166,49 @@ export const MENU: MenuItem[] = [
     cat: 'bite', icon: '🥞', name: 'Hotteok', says: '/ Korean Pancake',
     desc: 'Pancake Korea isi gula merah dan kacang, crispy di luar lembut di dalam.',
     price: 'Rp25.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/hotteok.jpg' }],
   },
   {
     cat: 'bite', icon: '🍟', name: 'Truffle Gamja', says: '/ Truffle Fries',
     desc: 'Kentang goreng renyah dengan aroma truffle yang harum.',
     price: 'Rp28.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/truffle-gamja.jpg' }],
   },
   {
     cat: 'bite', icon: '🥟', name: 'Gyoza', says: '/ Dumpling',
     desc: 'Pangsit ayam panggang yang renyah di luar, juicy di dalam.',
     price: 'Rp25.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/gyoza.jpg' }],
   },
   {
     cat: 'bite', icon: '🧀', name: 'Gyoza Cheese', says: '/ Cheese Dumpling',
     desc: 'Gyoza isi ayam dengan lelehan keju yang creamy.',
     price: 'Rp28.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/gyoza-cheese.jpg' }],
   },
   {
     cat: 'bite', icon: '🥚', name: 'Gyoza Mentai', says: '/ Mentai Dumpling',
     desc: 'Gyoza dengan saus mentai yang kaya dan gurih.',
     price: 'Rp28.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/gyoza-mentai.jpg' }],
   },
   {
     cat: 'bite', icon: '🫐', name: 'Dimsum', says: '/ Dimsum',
     desc: 'Dimsum kukus lembut dengan isian ayam pilihan.',
     price: 'Rp25.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/dimsum.jpg' }],
   },
   {
     cat: 'bite', icon: '✨', name: 'Dimsum Mentai', says: '/ Mentai Dimsum',
     desc: 'Dimsum spesial dengan topping saus mentai creamy.',
     price: 'Rp28.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/dimsum-mentai.jpg' }],
   },
   {
     cat: 'bite', icon: '🧆', name: 'Cheeseball', says: '/ Cheese Ball',
     desc: 'Bola keju goreng yang meleleh di dalam. Snack favorit!',
     price: 'Rp28.000',
+    images: [{ label: 'Foto', src: '/website-koneo/menu/cheeseball.jpg' }],
   },
   {
     cat: 'bite', icon: '🍗', name: 'Chicken Bite', says: '/ Chicken Bite',
