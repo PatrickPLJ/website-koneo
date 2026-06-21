@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { LINKS } from '../config'
+import { menuImgUrl } from '../utils/imgUrl'
 
 const items = [
   { href: '#menu',    label: 'Menu' },
@@ -16,7 +17,7 @@ export default function Nav() {
     <header className="nav">
       <div className="wrap nav-in">
         <a href="#top" className="brand-mark" onClick={close}>
-          <span className="brand-logo">KONEO</span>
+          <img src={menuImgUrl('/logo-text.png')} alt="Koneo" className="brand-logo-img" />
         </a>
         <nav className={`nav-links${open ? ' open' : ''}`}>
           {items.map((it) => (

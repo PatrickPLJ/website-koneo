@@ -49,7 +49,7 @@ header.nav{
 }
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
 .brand-mark{display:flex;align-items:center}
-.brand-logo{font-family:"Fredoka","Fredoka One",sans-serif;font-weight:600;font-size:1.6rem;color:#1a4e8c;letter-spacing:.04em;line-height:1}
+.brand-logo-img{height:32px;width:auto;display:block}
 .nav-links{display:flex;gap:1.8rem;align-items:center;font-size:.9rem;font-weight:600}
 .nav-links a{position:relative;padding:.2rem 0}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--navy);transition:width .35s var(--ease)}
@@ -94,7 +94,7 @@ header.nav{
 .hero-art{position:relative;align-self:stretch;min-height:340px;display:flex;align-items:flex-end;justify-content:center}
 .bowl-stage{position:relative;width:100%;max-width:420px}
 .koneo-logo-wrap{display:flex;align-items:center;justify-content:center;width:100%;max-width:380px;margin-inline:auto}
-.koneo-logo-svg{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(9,58,114,.15))}
+.koneo-logo-img{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(9,58,114,.15))}
 .blob{position:absolute;inset:auto;border-radius:50%;filter:blur(2px)}
 .blob.b1{width:300px;height:300px;background:radial-gradient(circle at 35% 30%,#bcd4ee,#093a72);right:-30px;top:-10px;opacity:.9;animation:float 7s var(--ease) infinite}
 .blob.b2{width:120px;height:120px;background:var(--berry);left:-10px;bottom:60px;opacity:.85;animation:float 5s var(--ease) infinite reverse}
