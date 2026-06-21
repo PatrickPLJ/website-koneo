@@ -30,17 +30,19 @@ const events = [
 ]
 
 const pages = [
-  '/pricelist/goes-to-cover.jpg',
-  '/pricelist/togo-cover.jpg',
-  '/pricelist/bingsoo-vanilla.jpg',
-  '/pricelist/bingsoo-non-vanilla.jpg',
-  '/pricelist/bingsoo-mix.jpg',
-  '/pricelist/togo-dimsum-1.jpg',
-  '/pricelist/togo-dimsum-2.jpg',
-  '/pricelist/togo-gyoza-1.jpg',
-  '/pricelist/togo-gyoza-2.jpg',
-  '/pricelist/togo-mix-1.jpg',
-  '/pricelist/togo-mix-2.jpg',
+  '/pricelist/pdf-page-1.jpg',
+  '/pricelist/pdf-page-2.jpg',
+  '/pricelist/pdf-page-3.jpg',
+  '/pricelist/pdf-page-4.jpg',
+  '/pricelist/pdf-page-5.jpg',
+  '/pricelist/pdf-page-6.jpg',
+  '/pricelist/pdf-page-7.jpg',
+  '/pricelist/pdf-page-8.jpg',
+  '/pricelist/pdf-page-9.jpg',
+  '/pricelist/pdf-page-10.jpg',
+  '/pricelist/pdf-page-11.jpg',
+  '/pricelist/pdf-page-12.jpg',
+  '/pricelist/pdf-page-13.jpg',
 ]
 
 function BookViewer({ onClose }: { onClose: () => void }) {
