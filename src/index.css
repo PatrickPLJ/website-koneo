@@ -211,6 +211,29 @@ section{position:relative}
 .goes-cta-text strong{font-family:"Fraunces",serif;font-size:1.1rem;font-weight:600}
 .goes-cta-text span{font-size:.86rem;color:color-mix(in srgb,var(--cream) 72%,transparent)}
 
+/* ── PRICE LIST ── */
+.pricelist-block{margin:3rem 0;padding:2rem;background:color-mix(in srgb,var(--cream) 7%,transparent);border:1.5px solid color-mix(in srgb,var(--cream) 14%,transparent);border-radius:var(--r)}
+.pricelist-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.pricelist-title{font-family:"Fraunces",serif;font-size:1.6rem;font-weight:700;color:var(--cream);margin-top:.3rem}
+.pricelist-sub{font-size:.86rem;color:color-mix(in srgb,var(--cream) 60%,transparent);max-width:28ch;text-align:right}
+.pricelist-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.pl-tab{font:700 .78rem/1 "Plus Jakarta Sans";letter-spacing:.04em;padding:.5rem 1rem;border-radius:100px;border:1.5px solid color-mix(in srgb,var(--cream) 22%,transparent);background:transparent;color:color-mix(in srgb,var(--cream) 70%,transparent);cursor:pointer;transition:.2s}
+.pl-tab.active,.pl-tab:hover{background:var(--cream);color:var(--navy);border-color:var(--cream)}
+.pricelist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.pricelist-thumb{position:relative;border:none;padding:0;cursor:pointer;border-radius:12px;overflow:hidden;background:color-mix(in srgb,var(--cream) 10%,transparent);transition:transform .3s var(--ease)}
+.pricelist-thumb:hover{transform:translateY(-4px)}
+.pricelist-thumb img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.pricelist-thumb-label{position:absolute;bottom:0;left:0;right:0;padding:.5rem .7rem;background:linear-gradient(transparent,rgba(5,20,45,.8));font:600 .75rem/1.3 "Plus Jakarta Sans";color:#fff;text-align:left}
+.pricelist-zoom{position:absolute;top:.5rem;right:.5rem;font-size:.7rem;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);color:#fff;padding:.2rem .45rem;border-radius:6px;opacity:0;transition:.2s}
+.pricelist-thumb:hover .pricelist-zoom{opacity:1}
+
+/* Lightbox */
+.pl-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:300;display:flex;align-items:center;justify-content:center;padding:1rem;animation:fadeIn .2s ease}
+.pl-lightbox img{max-width:min(560px,95vw);max-height:90dvh;object-fit:contain;border-radius:12px}
+.pl-lightbox-close{position:absolute;top:1rem;right:1rem;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:1.1rem;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.pl-lightbox-close:hover{background:rgba(255,255,255,.3)}
+@media(max-width:640px){.pricelist-head{flex-direction:column}.pricelist-sub{text-align:left}.pricelist-grid{grid-template-columns:repeat(2,1fr)}}
+
 /* ============ KENAPA KONEO (about grid) ============ */
 #voice{background:var(--navy);color:var(--cream);overflow:hidden}
 #voice .glow{position:absolute;width:min(560px,90vw);height:560px;top:-200px;left:50%;transform:translateX(-50%);border-radius:50%;filter:blur(220px);background:#1d5aa0;z-index:0;pointer-events:none}

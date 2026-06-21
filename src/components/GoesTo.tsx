@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { waLink } from '../config'
+import { menuImgUrl } from '../utils/imgUrl'
 
 const events = [
   {
@@ -27,7 +29,44 @@ const events = [
   },
 ]
 
+const priceGroups = [
+  {
+    label: '❄️ Bingsoo',
+    pages: [
+      { name: 'Vanilla Based', file: '/pricelist/bingsoo-vanilla.jpg' },
+      { name: 'Non Vanilla Based', file: '/pricelist/bingsoo-non-vanilla.jpg' },
+      { name: 'Mix Based', file: '/pricelist/bingsoo-mix.jpg' },
+    ],
+  },
+  {
+    label: '🥟 Dimsum',
+    pages: [
+      { name: 'Dimsum Mentai (1)', file: '/pricelist/togo-dimsum-1.jpg' },
+      { name: 'Dimsum Mentai (2)', file: '/pricelist/togo-dimsum-2.jpg' },
+    ],
+  },
+  {
+    label: '🥟 Gyoza',
+    pages: [
+      { name: 'Gyoza Mentai (1)', file: '/pricelist/togo-gyoza-1.jpg' },
+      { name: 'Gyoza Mentai (2)', file: '/pricelist/togo-gyoza-2.jpg' },
+    ],
+  },
+  {
+    label: '🎉 Mix',
+    pages: [
+      { name: 'Mix Dimsum & Gyoza (1)', file: '/pricelist/togo-mix-1.jpg' },
+      { name: 'Mix Dimsum & Gyoza (2)', file: '/pricelist/togo-mix-2.jpg' },
+    ],
+  },
+]
+
 export default function GoesTo() {
+  const [activeGroup, setActiveGroup] = useState(0)
+  const [lightbox, setLightbox] = useState<string | null>(null)
+
+  const pages = priceGroups[activeGroup].pages
+
   return (
     <section id="goes-to" className="pad goes-to">
       <div className="glow" aria-hidden="true" />
@@ -56,17 +95,77 @@ export default function GoesTo() {
           ))}
         </div>
 
+        {/* ── PRICE LIST ── */}
+        <div className="pricelist-block reveal">
+          <div className="pricelist-head">
+            <div>
+              <span className="eyebrow" style={{ color: 'var(--ice)' }}>Investasi Acaramu</span>
+              <h3 className="pricelist-title">Price List</h3>
+            </div>
+            <p className="pricelist-sub">Klik gambar untuk melihat detail harga secara lengkap.</p>
+          </div>
+
+          {/* Tab filter */}
+          <div className="pricelist-tabs">
+            {priceGroups.map((g, i) => (
+              <button
+                key={g.label}
+                className={`pl-tab${i === activeGroup ? ' active' : ''}`}
+                onClick={() => setActiveGroup(i)}
+              >
+                {g.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Price pages grid */}
+          <div className="pricelist-grid">
+            {pages.map((p) => (
+              <button
+                key={p.file}
+                className="pricelist-thumb"
+                onClick={() => setLightbox(p.file)}
+                aria-label={`Lihat ${p.name}`}
+              >
+                <img src={menuImgUrl(p.file)} alt={p.name} loading="lazy" />
+                <span className="pricelist-thumb-label">{p.name}</span>
+                <span className="pricelist-zoom">🔍 Tap untuk zoom</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="goes-cta reveal">
           <div className="goes-cta-text">
             <strong>Tertarik punya Koneo di acaramu?</strong>
             <span>Hubungi kami sekarang untuk diskusi paket dan ketersediaan tanggal.</span>
           </div>
-          <a href={waLink('Halo Koneo! Saya tertarik dengan layanan Koneo Goes To untuk acara saya. Bisa info lebih lanjut?')}
-            target="_blank" rel="noopener" className="btn">
+          <a
+            href={waLink('Halo Koneo! Saya tertarik dengan layanan Koneo Goes To untuk acara saya. Bisa info lebih lanjut?')}
+            target="_blank" rel="noopener" className="btn"
+          >
             Hubungi via WhatsApp →
           </a>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          className="pl-lightbox"
+          onClick={() => setLightbox(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Price list fullscreen"
+        >
+          <button className="pl-lightbox-close" onClick={() => setLightbox(null)}>✕</button>
+          <img
+            src={menuImgUrl(lightbox)}
+            alt="Price list"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   )
 }
