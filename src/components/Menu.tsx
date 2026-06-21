@@ -31,6 +31,7 @@ const subColor: Record<BeverageSub, string> = {
 
 function MenuCard({ item, onClick }: { item: MenuItem; onClick: () => void }) {
   const icoColor = item.sub ? subColor[item.sub] : catColor[item.cat]
+  const thumb = item.images?.[0]
   return (
     <article
       className="card reveal card-clickable"
@@ -42,7 +43,17 @@ function MenuCard({ item, onClick }: { item: MenuItem; onClick: () => void }) {
       onKeyDown={(e) => e.key === 'Enter' && onClick()}
       aria-label={`Lihat detail ${item.name}`}
     >
-      <div className="ico">{item.icon}</div>
+      {thumb ? (
+        <div className="ico ico-thumb">
+          <img
+            src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${thumb.src}`}
+            alt={item.name}
+            className="card-thumb"
+          />
+        </div>
+      ) : (
+        <div className="ico">{item.icon}</div>
+      )}
       <h3>
         {item.name}
         {item.says && <span className="says">{item.says}</span>}
