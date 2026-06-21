@@ -6,7 +6,7 @@ const items = [
   { href: '#menu',    label: 'Menu' },
   { href: '#voice',   label: 'About Us' },
   { href: '#goes-to', label: 'Catering' },
-  { href: '#visit',   label: 'Kunjungi' },
+  { href: '#visit',   label: 'Visit Us' },
 ]
 
 export default function Nav() {
