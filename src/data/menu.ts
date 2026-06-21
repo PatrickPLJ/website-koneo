@@ -22,6 +22,7 @@ export interface MenuItem {
   fav?: boolean
   cat: Category
   sub?: BeverageSub
+  images?: { label: string; src: string }[]
 }
 
 export const BEVERAGE_GROUPS: { sub: BeverageSub; label: string; icon: string }[] = [
@@ -45,24 +46,31 @@ export const MENU: MenuItem[] = [
     desc: 'Bingsoo Korea lembut, stroberi segar, saus stroberi melimpah. Favorit semua orang.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
+    images: [
+      { label: 'Regular', src: '/menu/stralgy-regular.jpg' },
+      { label: 'Lite',    src: '/menu/stralgy-lite.jpg' },
+    ],
   },
   {
     cat: 'bingsoo', icon: '🫐', name: 'Bleucurrent', says: '/ Blackcurrant',
     desc: 'Saus blackcurrant ungu yang asam-manis, super menyegarkan.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
+    images: [{ label: 'Regular', src: '/menu/bleucurrent-regular.jpg' }],
   },
   {
     cat: 'bingsoo', icon: '🍪', name: 'Biscoff', says: '/ Biscoff',
     desc: 'Krim biscoff karamel dengan remahan biskuit lotus. Manis yang pas.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
+    images: [{ label: 'Regular', src: '/menu/biscoff-regular.jpg' }],
   },
   {
     cat: 'bingsoo', icon: '🥭', name: 'Mango', says: '/ Mango',
     desc: 'Potongan mangga segar di atas bingsoo lembut. Manis tropis yang segar.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
+    images: [{ label: 'Regular', src: '/menu/mango-regular.jpg' }],
   },
   {
     cat: 'bingsoo', icon: '☕', name: 'Tiramissu', says: '/ Tiramisu',
@@ -81,18 +89,24 @@ export const MENU: MenuItem[] = [
     desc: 'Cokelat lembut dengan cookies and cream yang renyah. Wajib coba.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
+    images: [{ label: 'Lite', src: '/menu/chocolist-lite.jpg' }],
   },
   {
     cat: 'bingsoo', icon: '🍦', name: 'Kukissnkrim', says: '/ Cookies n Cream',
     desc: 'Perpaduan kukis renyah dengan krim lembut di atas bingsoo segar.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
+    images: [{ label: 'Regular', src: '/menu/kukissnkrim-regular.jpg' }],
   },
   {
     cat: 'bingsoo', icon: '🍵', name: 'Matcha', says: '/ Matcha',
     desc: 'Matcha asli ditabur almond di atas gunungan es yang lumer di mulut.',
     price: 'Rp25.000',
     variants: [{ label: 'Lite', price: 'Rp25.000' }, { label: 'Regular', price: 'Rp30.000' }],
+    images: [
+      { label: 'Regular', src: '/menu/matcha-regular.jpg' },
+      { label: 'Lite',    src: '/menu/matcha-lite.jpg' },
+    ],
   },
 
   // ---------- RICE BOWL ----------

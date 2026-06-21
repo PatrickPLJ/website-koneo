@@ -166,6 +166,10 @@ section{position:relative}
 @media(min-width:640px){.modal-img{border-radius:var(--r) var(--r) 0 0}}
 .modal-img-icon{font-size:4.5rem;line-height:1}
 .modal-img-hint{font:500 .75rem/1 "Plus Jakarta Sans";opacity:.45;letter-spacing:.04em}
+.modal-photo{width:100%;height:100%;object-fit:cover;display:block}
+.modal-img-tabs{position:absolute;bottom:.75rem;left:50%;transform:translateX(-50%);display:flex;gap:.4rem;background:rgba(255,255,255,.75);backdrop-filter:blur(8px);border-radius:100px;padding:.3rem .5rem}
+.modal-img-tab{font:700 .7rem/1 "Plus Jakarta Sans";letter-spacing:.06em;text-transform:uppercase;padding:.3rem .7rem;border-radius:100px;border:none;background:transparent;cursor:pointer;color:var(--navy);transition:.2s}
+.modal-img-tab.active{background:var(--navy);color:var(--cream)}
 .modal-body{padding:1.4rem 1.6rem 2rem}
 .modal-cat-badge{display:inline-block;font:700 .68rem/1 "Plus Jakarta Sans";letter-spacing:.1em;text-transform:uppercase;padding:.3rem .65rem;border-radius:6px;margin-bottom:.8rem}
 .modal-cat-badge[data-c="bingsoo"]{background:#dfeaf6;color:#0d4080}
