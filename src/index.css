@@ -85,7 +85,7 @@ header.nav{
   border:1.5px solid var(--navy);border-radius:100px;padding:.4rem .9rem;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .hero-tag .pulse{width:8px;height:8px;border-radius:50%;background:var(--berry);animation:pulse 1.8s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
-.hero h1{font-size:clamp(2.8rem,8vw,6rem);margin:.5rem 0 .2rem;color:var(--navy)}
+.hero h1{font-size:clamp(1.8rem,4vw,3.2rem);margin:.5rem 0 .2rem;color:var(--navy);white-space:nowrap}
 .hero h1 em{font-style:italic;font-weight:500;color:var(--berry)}
 .hero-sub{font-size:clamp(1rem,1.4vw,1.18rem);max-width:40ch;color:color-mix(in srgb,var(--navy) 80%,transparent);margin:.6rem 0 1.6rem}
 .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;justify-content:center}
