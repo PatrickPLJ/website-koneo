@@ -3,9 +3,8 @@ import { LINKS } from '../config'
 
 const items = [
   { href: '#menu',    label: 'Menu' },
-  { href: '#voice',   label: 'Kenapa Koneo' },
-  { href: '#story',   label: 'Cerita' },
-  { href: '#goes-to', label: 'Goes To' },
+  { href: '#voice',   label: 'About Us' },
+  { href: '#goes-to', label: 'Catering' },
   { href: '#visit',   label: 'Kunjungi' },
 ]
 
