@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { MenuItem } from '../data/menu'
+import { menuImgUrl } from '../utils/imgUrl'
 
 interface Props {
   item: MenuItem
@@ -40,7 +41,7 @@ export default function MenuModal({ item, onClose }: Props) {
         <div className="modal-img" data-c={item.cat}>
           {currentImg ? (
             <img
-              src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${currentImg.src}`}
+              src={menuImgUrl(currentImg.src)}
               alt={`${item.name} ${currentImg.label}`}
               className="modal-photo"
             />

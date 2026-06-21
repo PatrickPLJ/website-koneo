@@ -1,6 +1,7 @@
 import { useState, type CSSProperties } from 'react'
 import { MENU, BEVERAGE_GROUPS, type Category, type BeverageSub, type MenuItem } from '../data/menu'
 import MenuModal from './MenuModal'
+import { menuImgUrl } from '../utils/imgUrl'
 
 type Filter = 'all' | Category
 
@@ -45,11 +46,7 @@ function MenuCard({ item, onClick }: { item: MenuItem; onClick: () => void }) {
     >
       {thumb ? (
         <div className="ico ico-thumb">
-          <img
-            src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${thumb.src}`}
-            alt={item.name}
-            className="card-thumb"
-          />
+          <img src={menuImgUrl(thumb.src)} alt={item.name} className="card-thumb" />
         </div>
       ) : (
         <div className="ico">{item.icon}</div>
