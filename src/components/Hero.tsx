@@ -9,7 +9,7 @@ export default function Hero() {
         </div>
         <div className="hero-copy">
           <span className="hero-tag reveal"><span className="pulse" />First Korean Bingsoo Bar in Bali</span>
-          <h1 className="display reveal">First<br />Bingsoo Bar<br /><em>in Bali.</em></h1>
+          <h1 className="display reveal">First Bingsoo Bar <em>in Bali.</em></h1>
           <p className="hero-sub reveal">
             Bingsoo yang lembut, segar, dan ramah kantong — disajikan di sudut paling <em>aesthetic</em> Denpasar. Mulai dari 20rb-an aja.
           </p>
