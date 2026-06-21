@@ -75,8 +75,11 @@ header.nav{
 .wa-fab .live{width:8px;height:8px;border-radius:50%;background:#3fcf6a;box-shadow:0 0 0 3px color-mix(in srgb,#3fcf6a 30%,transparent);animation:pulse 1.8s infinite}
 
 /* ============ HERO ============ */
-.hero{position:relative;padding:clamp(2rem,6vw,5rem) 0 0;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:end}
+.hero{position:relative;padding:clamp(2rem,6vw,5rem) 0;overflow:hidden}
+.hero-center{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem;max-width:720px;margin-inline:auto}
+.hero-art{display:flex;justify-content:center}
+.koneo-logo-wrap{display:flex;align-items:center;justify-content:center;width:100%;max-width:180px;margin-inline:auto}
+.koneo-logo-img{width:100%;height:auto;filter:drop-shadow(0 12px 28px rgba(9,58,114,.15))}
 .hero-tag{display:inline-flex;align-items:center;gap:.6rem;color:var(--navy);
   border:1.5px solid var(--navy);border-radius:100px;padding:.4rem .9rem;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .hero-tag .pulse{width:8px;height:8px;border-radius:50%;background:var(--berry);animation:pulse 1.8s infinite}
@@ -84,17 +87,14 @@ header.nav{
 .hero h1{font-size:clamp(3.4rem,12vw,9.5rem);margin:.5rem 0 .2rem;color:var(--navy)}
 .hero h1 em{font-style:italic;font-weight:500;color:var(--berry)}
 .hero-sub{font-size:clamp(1rem,1.4vw,1.18rem);max-width:40ch;color:color-mix(in srgb,var(--navy) 80%,transparent);margin:.6rem 0 1.6rem}
-.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
-.hero-meta{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2.2rem;padding-top:1.4rem;border-top:1px dashed color-mix(in srgb,var(--navy) 30%,transparent)}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;justify-content:center}
+.hero-meta{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center;margin-top:2.2rem;padding-top:1.4rem;border-top:1px dashed color-mix(in srgb,var(--navy) 30%,transparent)}
 .hero-meta div{display:flex;flex-direction:column}
 .hero-meta b{font-family:"Fraunces",serif;font-size:1.5rem;line-height:1}
 .hero-meta span{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-top:.25rem}
 
 /* bingsoo art */
-.hero-art{position:relative;align-self:stretch;min-height:340px;display:flex;align-items:flex-end;justify-content:center}
 .bowl-stage{position:relative;width:100%;max-width:420px}
-.koneo-logo-wrap{display:flex;align-items:center;justify-content:center;width:100%;max-width:380px;margin-inline:auto}
-.koneo-logo-img{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(9,58,114,.15))}
 .blob{position:absolute;inset:auto;border-radius:50%;filter:blur(2px)}
 .blob.b1{width:300px;height:300px;background:radial-gradient(circle at 35% 30%,#bcd4ee,#093a72);right:-30px;top:-10px;opacity:.9;animation:float 7s var(--ease) infinite}
 .blob.b2{width:120px;height:120px;background:var(--berry);left:-10px;bottom:60px;opacity:.85;animation:float 5s var(--ease) infinite reverse}
@@ -306,8 +306,6 @@ footer ul a:hover{opacity:1;color:var(--ice);padding-left:4px}
 
 /* ============ RESPONSIVE ============ */
 @media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-art{order:-1;min-height:260px;max-width:360px;margin-inline:auto}
   #story .wrap,.visit-grid{grid-template-columns:1fr}
   .foot-top{grid-template-columns:1fr 1fr}
 }

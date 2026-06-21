@@ -3,7 +3,10 @@ import KoneoLogo from './KoneoLogo'
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="wrap hero-grid">
+      <div className="wrap hero-center">
+        <div className="hero-art reveal">
+          <KoneoLogo />
+        </div>
         <div className="hero-copy">
           <span className="hero-tag reveal"><span className="pulse" />First Korean Bingsoo Bar in Bali</span>
           <h1 className="display reveal">First<br />Bingsoo Bar<br /><em>in Bali.</em></h1>
@@ -19,9 +22,6 @@ export default function Hero() {
             <div><b>10–22</b><span>Buka Tiap Hari · WITA</span></div>
             <div><b>#1</b><span>Bingsoo Bar di Bali</span></div>
           </div>
-        </div>
-        <div className="hero-art reveal">
-          <KoneoLogo />
         </div>
       </div>
     </section>
