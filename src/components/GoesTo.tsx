@@ -30,6 +30,8 @@ const events = [
 ]
 
 const pages = [
+  '/pricelist/goes-to-cover.jpg',
+  '/pricelist/togo-cover.jpg',
   '/pricelist/bingsoo-vanilla.jpg',
   '/pricelist/bingsoo-non-vanilla.jpg',
   '/pricelist/bingsoo-mix.jpg',
