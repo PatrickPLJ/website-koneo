@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { waLink } from '../config'
 import { menuImgUrl } from '../utils/imgUrl'
 
@@ -29,43 +29,101 @@ const events = [
   },
 ]
 
-const priceGroups = [
-  {
-    label: '❄️ Bingsoo',
-    pages: [
-      { name: 'Vanilla Based', file: '/pricelist/bingsoo-vanilla.jpg' },
-      { name: 'Non Vanilla Based', file: '/pricelist/bingsoo-non-vanilla.jpg' },
-      { name: 'Mix Based', file: '/pricelist/bingsoo-mix.jpg' },
-    ],
-  },
-  {
-    label: '🥟 Dimsum',
-    pages: [
-      { name: 'Dimsum Mentai (1)', file: '/pricelist/togo-dimsum-1.jpg' },
-      { name: 'Dimsum Mentai (2)', file: '/pricelist/togo-dimsum-2.jpg' },
-    ],
-  },
-  {
-    label: '🥟 Gyoza',
-    pages: [
-      { name: 'Gyoza Mentai (1)', file: '/pricelist/togo-gyoza-1.jpg' },
-      { name: 'Gyoza Mentai (2)', file: '/pricelist/togo-gyoza-2.jpg' },
-    ],
-  },
-  {
-    label: '🎉 Mix',
-    pages: [
-      { name: 'Mix Dimsum & Gyoza (1)', file: '/pricelist/togo-mix-1.jpg' },
-      { name: 'Mix Dimsum & Gyoza (2)', file: '/pricelist/togo-mix-2.jpg' },
-    ],
-  },
+const pages = [
+  '/pricelist/bingsoo-vanilla.jpg',
+  '/pricelist/bingsoo-non-vanilla.jpg',
+  '/pricelist/bingsoo-mix.jpg',
+  '/pricelist/togo-dimsum-1.jpg',
+  '/pricelist/togo-dimsum-2.jpg',
+  '/pricelist/togo-gyoza-1.jpg',
+  '/pricelist/togo-gyoza-2.jpg',
+  '/pricelist/togo-mix-1.jpg',
+  '/pricelist/togo-mix-2.jpg',
 ]
 
-export default function GoesTo() {
-  const [activeGroup, setActiveGroup] = useState(0)
-  const [lightbox, setLightbox] = useState<string | null>(null)
+function BookViewer({ onClose }: { onClose: () => void }) {
+  const [current, setCurrent] = useState(0)
 
-  const pages = priceGroups[activeGroup].pages
+  const prev = useCallback(() => setCurrent((c) => Math.max(0, c - 1)), [])
+  const next = useCallback(() => setCurrent((c) => Math.min(pages.length - 1, c + 1)), [])
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+      if (e.key === 'ArrowLeft') prev()
+      if (e.key === 'ArrowRight') next()
+    }
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose, prev, next])
+
+  // touch swipe
+  let touchX = 0
+  const onTouchStart = (e: React.TouchEvent) => { touchX = e.touches[0].clientX }
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const diff = touchX - e.changedTouches[0].clientX
+    if (diff > 50) next()
+    else if (diff < -50) prev()
+  }
+
+  return (
+    <div className="book-overlay" onClick={onClose}>
+      <div
+        className="book-viewer"
+        onClick={(e) => e.stopPropagation()}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
+        {/* Close */}
+        <button className="book-close" onClick={onClose}>✕</button>
+
+        {/* Header */}
+        <div className="book-header">
+          <span className="book-title">Price List — Koneo Goes To</span>
+          <span className="book-counter">{current + 1} / {pages.length}</span>
+        </div>
+
+        {/* Page image */}
+        <div className="book-page">
+          <img
+            key={current}
+            src={menuImgUrl(pages[current])}
+            alt={`Halaman ${current + 1}`}
+            className="book-img"
+          />
+        </div>
+
+        {/* Navigation */}
+        <div className="book-nav">
+          <button className="book-btn" onClick={prev} disabled={current === 0}>
+            ← Sebelumnya
+          </button>
+          {/* Dot indicators */}
+          <div className="book-dots">
+            {pages.map((_, i) => (
+              <button
+                key={i}
+                className={`book-dot${i === current ? ' active' : ''}`}
+                onClick={() => setCurrent(i)}
+                aria-label={`Halaman ${i + 1}`}
+              />
+            ))}
+          </div>
+          <button className="book-btn" onClick={next} disabled={current === pages.length - 1}>
+            Berikutnya →
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function GoesTo() {
+  const [bookOpen, setBookOpen] = useState(false)
 
   return (
     <section id="goes-to" className="pad goes-to">
@@ -95,44 +153,16 @@ export default function GoesTo() {
           ))}
         </div>
 
-        {/* ── PRICE LIST ── */}
-        <div className="pricelist-block reveal">
-          <div className="pricelist-head">
-            <div>
-              <span className="eyebrow" style={{ color: 'var(--ice)' }}>Investasi Acaramu</span>
-              <h3 className="pricelist-title">Price List</h3>
-            </div>
-            <p className="pricelist-sub">Klik gambar untuk melihat detail harga secara lengkap.</p>
+        {/* Price list trigger */}
+        <div className="pricelist-trigger reveal">
+          <div className="pricelist-trigger-text">
+            <span className="eyebrow" style={{ color: 'var(--ice)' }}>Investasi Acaramu</span>
+            <strong>Lihat Price List Lengkap</strong>
+            <span>Tersedia paket bingsoo, dimsum, gyoza, dan mix untuk berbagai skala acara.</span>
           </div>
-
-          {/* Tab filter */}
-          <div className="pricelist-tabs">
-            {priceGroups.map((g, i) => (
-              <button
-                key={g.label}
-                className={`pl-tab${i === activeGroup ? ' active' : ''}`}
-                onClick={() => setActiveGroup(i)}
-              >
-                {g.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Price pages grid */}
-          <div className="pricelist-grid">
-            {pages.map((p) => (
-              <button
-                key={p.file}
-                className="pricelist-thumb"
-                onClick={() => setLightbox(p.file)}
-                aria-label={`Lihat ${p.name}`}
-              >
-                <img src={menuImgUrl(p.file)} alt={p.name} loading="lazy" />
-                <span className="pricelist-thumb-label">{p.name}</span>
-                <span className="pricelist-zoom">🔍 Tap untuk zoom</span>
-              </button>
-            ))}
-          </div>
+          <button className="btn btn-light" onClick={() => setBookOpen(true)}>
+            📋 Buka Price List
+          </button>
         </div>
 
         <div className="goes-cta reveal">
@@ -149,23 +179,7 @@ export default function GoesTo() {
         </div>
       </div>
 
-      {/* Lightbox */}
-      {lightbox && (
-        <div
-          className="pl-lightbox"
-          onClick={() => setLightbox(null)}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Price list fullscreen"
-        >
-          <button className="pl-lightbox-close" onClick={() => setLightbox(null)}>✕</button>
-          <img
-            src={menuImgUrl(lightbox)}
-            alt="Price list"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+      {bookOpen && <BookViewer onClose={() => setBookOpen(false)} />}
     </section>
   )
 }
