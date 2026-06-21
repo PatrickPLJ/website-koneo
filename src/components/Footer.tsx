@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <h4 className="serif">Koneo<br />Indonesia</h4>
             <p style={{ opacity: 0.8, maxWidth: '30ch' }}>
-              First Korean Bingsoo Bar in Bali. Dingin, lembut, dan selalu bikin balik lagi. ❄️
+              First Korean Bingsoo Bar in Bali. Dingin, lembut, dan selalu bikin balik lagi.
             </p>
           </div>
           <div>
@@ -33,7 +33,7 @@ export default function Footer() {
         </div>
         <div className="foot-bottom">
           <span>© 2026 Koneo Indonesia · Denpasar, Bali</span>
-          <span>Dibuat dengan ❄️ untuk pencinta bingsoo</span>
+          <span>Dibuat untuk pencinta bingsoo</span>
         </div>
       </div>
     </footer>

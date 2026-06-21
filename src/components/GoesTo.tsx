@@ -4,25 +4,21 @@ import { menuImgUrl } from '../utils/imgUrl'
 
 const events = [
   {
-    icon: '💍',
     title: 'Pernikahan',
     desc: 'Hadirkan bingsoo bar Korea di hari spesialmu. Setup booth estetik, crew ramah, dan menu bisa dikustomisasi sesuai tema wedding.',
     tags: ['Booth Setup', 'Custom Menu', 'Crew Terlatih'],
   },
   {
-    icon: '🎂',
     title: 'Ulang Tahun',
     desc: 'Bikin surprise makin berkesan dengan Koneo hadir langsung. Cocok untuk sweet seventeen, kids party, hingga adult birthday.',
     tags: ['Kids Friendly', 'Live Serving', 'Dekorasi Booth'],
   },
   {
-    icon: '🎪',
     title: 'Event & Pameran',
     desc: 'Koneo bisa hadir di bazaar, festival, corporate event, dan pameran. Stand menarik yang selalu jadi magnet pengunjung.',
     tags: ['Bazaar & Festival', 'Corporate Event', 'Crowd Pleaser'],
   },
   {
-    icon: '🎓',
     title: 'Wisuda & Gathering',
     desc: 'Rayakan pencapaian bersama orang tersayang dengan sajian bingsoo segar. Cocok untuk acara keluarga, reuni, dan gathering kantor.',
     tags: ['Family Gathering', 'Reuni', 'Kantor & Kampus'],
@@ -83,7 +79,7 @@ function BookViewer({ onClose }: { onClose: () => void }) {
         onTouchEnd={onTouchEnd}
       >
         {/* Close */}
-        <button className="book-close" onClick={onClose}>✕</button>
+        <button className="book-close" onClick={onClose}>Tutup</button>
 
         {/* Header */}
         <div className="book-header">
@@ -104,7 +100,7 @@ function BookViewer({ onClose }: { onClose: () => void }) {
         {/* Navigation */}
         <div className="book-nav">
           <button className="book-btn" onClick={prev} disabled={current === 0}>
-            ← Sebelumnya
+            Sebelumnya
           </button>
           {/* Dot indicators */}
           <div className="book-dots">
@@ -118,7 +114,7 @@ function BookViewer({ onClose }: { onClose: () => void }) {
             ))}
           </div>
           <button className="book-btn" onClick={next} disabled={current === pages.length - 1}>
-            Berikutnya →
+            Berikutnya
           </button>
         </div>
       </div>
@@ -145,7 +141,6 @@ export default function GoesTo() {
         <div className="goes-grid">
           {events.map((ev) => (
             <div className="goes-card reveal" key={ev.title}>
-              <div className="goes-icon">{ev.icon}</div>
               <h3>{ev.title}</h3>
               <p>{ev.desc}</p>
               <div className="goes-tags">
@@ -165,7 +160,7 @@ export default function GoesTo() {
             <span>Tersedia paket bingsoo, dimsum, gyoza, dan mix untuk berbagai skala acara.</span>
           </div>
           <button className="btn btn-light" onClick={() => setBookOpen(true)}>
-            📋 Buka Price List
+            Buka Price List
           </button>
         </div>
 
@@ -178,7 +173,7 @@ export default function GoesTo() {
             href={waLink('Halo Koneo! Saya tertarik dengan layanan Koneo Goes To untuk acara saya. Bisa info lebih lanjut?')}
             target="_blank" rel="noopener" className="btn"
           >
-            Hubungi via WhatsApp →
+            Hubungi via WhatsApp
           </a>
         </div>
       </div>

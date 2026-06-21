@@ -32,7 +32,7 @@ const reviews = [
 ]
 
 function Stars({ n }: { n: number }) {
-  return <span className="stars">{'★'.repeat(n)}{'☆'.repeat(5 - n)}</span>
+  return <span className="stars">{'5.0'}</span>
 }
 
 export default function Story() {
@@ -52,13 +52,13 @@ export default function Story() {
             </p>
             <div className="hero-cta" style={{ marginTop: '1.6rem' }}>
               <a href={LINKS.instagram} target="_blank" rel="noopener" className="btn">Lihat Instagram</a>
-              <a href="https://www.google.com/maps/search/?api=1&query=Koneo+Indonesia+Jl.+Nangka+Utara+Denpasar" target="_blank" rel="noopener" className="btn ghost">Tulis Ulasan →</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Koneo+Indonesia+Jl.+Nangka+Utara+Denpasar" target="_blank" rel="noopener" className="btn ghost">Tulis Ulasan</a>
             </div>
           </div>
 
           <div className="rating-badge reveal">
             <div className="rating-score">4.9</div>
-            <div className="rating-stars">★★★★★</div>
+            <div className="rating-stars">5.0 / 5</div>
             <div className="rating-label">Google Reviews</div>
             <div className="rating-count">961 ulasan</div>
           </div>

@@ -20,7 +20,7 @@ export default function Visit() {
             </ul>
             <div className="hero-cta" style={{ marginTop: '1.8rem' }}>
               <a href={waLink()} target="_blank" rel="noopener" className="btn">Pesan via WhatsApp</a>
-              <a href={LINKS.maps} target="_blank" rel="noopener" className="btn ghost">Buka di Google Maps →</a>
+              <a href={LINKS.maps} target="_blank" rel="noopener" className="btn ghost">Buka di Google Maps</a>
             </div>
           </div>
           <a className="map reveal" href={LINKS.maps} target="_blank" rel="noopener" aria-label="Lokasi Koneo di peta">

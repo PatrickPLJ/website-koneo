@@ -8,11 +8,11 @@ interface Props {
 }
 
 const catLabel: Record<string, string> = {
-  bingsoo:  '❄️ Bingsoo',
-  rice_bowl:'🍚 Rice Bowl',
-  bite:     '🍗 Bite',
-  beverage: '🥤 Beverage',
-  toppings: '✨ Toppings',
+  bingsoo:  'Bingsoo',
+  rice_bowl:'Rice Bowl',
+  bite:     'Bite',
+  beverage: 'Beverage',
+  toppings: 'Toppings',
 }
 
 export default function MenuModal({ item, onClose }: Props) {
@@ -35,7 +35,7 @@ export default function MenuModal({ item, onClose }: Props) {
   return (
     <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true">
       <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose} aria-label="Tutup">✕</button>
+        <button className="modal-close" onClick={onClose} aria-label="Tutup">Tutup</button>
 
         {/* Image area */}
         <div className="modal-img" data-c={item.cat}>
@@ -99,7 +99,7 @@ export default function MenuModal({ item, onClose }: Props) {
             )}
           </div>
 
-          {item.fav && <div className="modal-fav-badge">⭐ Best Seller</div>}
+          {item.fav && <div className="modal-fav-badge">Best Seller</div>}
         </div>
       </div>
     </div>

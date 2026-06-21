@@ -7,11 +7,11 @@ type Filter = 'all' | Category
 
 const filters: { f: Filter; label: string }[] = [
   { f: 'all',       label: 'Semua' },
-  { f: 'bingsoo',   label: '❄️ Bingsoo' },
-  { f: 'rice_bowl', label: '🍚 Rice Bowl' },
-  { f: 'bite',      label: '🍗 Bite' },
-  { f: 'beverage',  label: '🥤 Beverage' },
-  { f: 'toppings',  label: '✨ Toppings' },
+  { f: 'bingsoo',   label: 'Bingsoo' },
+  { f: 'rice_bowl', label: 'Rice Bowl' },
+  { f: 'bite',      label: 'Bite' },
+  { f: 'beverage',  label: 'Beverage' },
+  { f: 'toppings',  label: 'Toppings' },
 ]
 
 const catColor: Record<string, string> = {
@@ -72,7 +72,7 @@ function MenuCard({ item, onClick }: { item: MenuItem; onClick: () => void }) {
           {item.fav && <span className="fav">Best Seller</span>}
         </div>
       )}
-      <span className="card-detail-hint">Tap untuk detail →</span>
+      <span className="card-detail-hint">Tap untuk detail</span>
     </article>
   )
 }

@@ -23,14 +23,14 @@ export default function Nav() {
             <a key={it.href} href={it.href} onClick={close}>{it.label}</a>
           ))}
         </nav>
-        <a href={LINKS.gofood} target="_blank" rel="noopener" className="btn nav-order">More Info →</a>
+        <a href={LINKS.gofood} target="_blank" rel="noopener" className="btn nav-order">More Info</a>
         <button
           className="nav-toggle btn ghost"
           aria-label={open ? 'Tutup menu' : 'Buka menu'}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >
-          {open ? '✕' : '☰'}
+          {open ? 'Tutup' : 'Menu'}
         </button>
       </div>
     </header>
