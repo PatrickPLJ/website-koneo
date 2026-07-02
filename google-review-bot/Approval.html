@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #fdf6ee;
+      margin: 0;
+      padding: 24px 16px;
+      color: #2b2320;
+    }
+    .card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 6px 20px rgba(60, 40, 20, 0.08);
+    }
+    .brand {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #c17a3f;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    h1 {
+      font-size: 19px;
+      margin: 0 0 12px;
+      line-height: 1.4;
+    }
+    .stars {
+      color: #f0a63b;
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+    .reviewer {
+      font-weight: 700;
+      margin-top: 4px;
+      font-size: 15px;
+    }
+    .review-text {
+      background: #f6f0e6;
+      border-radius: 12px;
+      padding: 14px;
+      margin: 16px 0;
+      white-space: pre-wrap;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    label {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 130px;
+      border: 1px solid #e3d7c6;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 14px;
+      font-family: inherit;
+      line-height: 1.5;
+      resize: vertical;
+    }
+    textarea:focus {
+      outline: 2px solid #c17a3f;
+      border-color: transparent;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    button {
+      flex: 1;
+      min-width: 160px;
+      padding: 13px 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-approve {
+      background: #2e7d4f;
+      color: #fff;
+    }
+    .btn-edit {
+      background: #c1502f;
+      color: #fff;
+    }
+    .meta {
+      font-size: 12px;
+      color: #8a7d6f;
+      margin-top: 18px;
+    }
+    .hint {
+      font-size: 12px;
+      color: #8a7d6f;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">Koneo Indonesia — Review Google Maps</div>
+    <h1>Cek draft balasan sebelum diposting</h1>
+
+    <div class="stars"><?= '★'.repeat(data.rating) + '☆'.repeat(5 - data.rating) ?></div>
+    <div class="reviewer"><?= data.reviewerName ?></div>
+    <div class="review-text"><?= data.reviewText || '(Pelanggan tidak menulis komentar, hanya memberi rating bintang)' ?></div>
+
+    <form method="post" action="<?= scriptUrl ?>">
+      <input type="hidden" name="row" value="<?= row ?>">
+      <input type="hidden" name="token" value="<?= token ?>">
+
+      <label for="finalReply">Draft balasan (boleh diedit sebelum posting):</label>
+      <textarea id="finalReply" name="finalReply"><?= data.draftReply ?></textarea>
+      <div class="hint">Kalau langsung klik "Setujui &amp; Posting" tanpa ubah teks di atas, draft asli dari Claude yang akan terpost.</div>
+
+      <div class="actions">
+        <button type="submit" name="action" value="approve" class="btn-approve">Setujui &amp; Posting</button>
+        <button type="submit" name="action" value="edit" class="btn-edit">Simpan Perubahan &amp; Posting</button>
+      </div>
+    </form>
+
+    <div class="meta">Status saat ini: <?= data.status ?></div>
+  </div>
+</body>
+</html>
