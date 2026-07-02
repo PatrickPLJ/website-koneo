@@ -73,10 +73,10 @@ property**. Isi baris berikut satu-satu:
 | `ANTHROPIC_API_KEY`     | API key dari langkah 2                                              |
 | `GMB_ACCOUNT_ID`        | Account ID Google Business Profile Koneo                            |
 | `GMB_LOCATION_ID`       | Location ID Google Business Profile Koneo                           |
-| `NOTIFICATION_METHOD`   | `whatsapp` atau `email` (pilih salah satu, lihat langkah 5)          |
-| `FONNTE_API_KEY`        | Token device Fonnte (isi kalau pakai `whatsapp`)                     |
-| `ADMIN_WHATSAPP_NUMBER` | Nomor WA admin, format `62812xxxxxxx` (isi kalau pakai `whatsapp`)   |
-| `ADMIN_EMAIL`           | Email admin yang terima notifikasi (isi kalau pakai `email`)         |
+| `NOTIFICATION_METHOD`   | `whatsapp` (nomor admin sudah ditentukan, lihat langkah 5)           |
+| `FONNTE_API_KEY`        | Token device Fonnte (didapat dari langkah 5)                        |
+| `ADMIN_WHATSAPP_NUMBER` | `6281228827930` (nomor WA admin Koneo: +62 812 2882 7930, format tanpa `+` dan tanpa spasi untuk Fonnte) |
+| `ADMIN_EMAIL`           | (Opsional — hanya kalau nanti mau pindah ke notifikasi email)        |
 | `TOKEN_SECRET`          | String acak panjang bebas, contoh: hasil `openssl rand -hex 32`      |
 | `SPREADSHEET_ID`        | (Opsional) ID Google Sheet log, kalau mau taruh di Sheet yang sudah ada di folder Drive member. Kosongkan untuk pakai spreadsheet aktif/bound. |
 
@@ -104,26 +104,22 @@ setelah web app di-deploy.
 > deployments → Edit"), URL web app akan berubah — jangan lupa jalankan
 > ulang `saveWebAppUrl()`.
 
-## 5. Setup notifikasi admin
+## 5. Setup notifikasi admin — WhatsApp via Fonnte
 
-Pilih salah satu (isi `NOTIFICATION_METHOD` sesuai pilihan):
+Notifikasi dikirim ke **nomor WA admin Koneo: +62 812 2882 7930**.
 
-### Opsi A — WhatsApp via Fonnte (lebih cocok untuk operasional toko)
+1. Daftar di [fonnte.com](https://fonnte.com), scan QR pakai nomor
+   **+62 812 2882 7930** untuk menghubungkannya sebagai device pengirim.
+2. Ambil **Token device** dari dashboard Fonnte → isi ke Script Property
+   `FONNTE_API_KEY`.
+3. Isi Script Property `ADMIN_WHATSAPP_NUMBER` = `6281228827930` (sudah
+   diisikan di tabel langkah 3 di atas).
+4. Set Script Property `NOTIFICATION_METHOD` = `whatsapp`.
 
-1. Daftar di [fonnte.com](https://fonnte.com), scan QR untuk hubungkan nomor
-   WhatsApp admin sebagai device.
-2. Ambil **Token device** dari dashboard Fonnte → isi ke `FONNTE_API_KEY`.
-3. Isi `ADMIN_WHATSAPP_NUMBER` dengan nomor tujuan (format `62...`, tanpa
-   tanda `+`).
-4. Set `NOTIFICATION_METHOD` = `whatsapp`.
-
-### Opsi B — Email (lebih mudah setup)
-
-1. Isi `ADMIN_EMAIL` dengan email admin.
-2. Set `NOTIFICATION_METHOD` = `email`.
-3. Tidak perlu setup tambahan — script pakai `GmailApp` dari akun Google
-   yang menjalankan Apps Script (akun yang sama dengan `Execute as` di
-   langkah 4).
+Kalau suatu saat mau pindah ke notifikasi email (tanpa Fonnte), tinggal isi
+`ADMIN_EMAIL` dan ganti `NOTIFICATION_METHOD` jadi `email` — tidak perlu
+ubah kode, karena `Code.gs` sudah mendukung dua-duanya lewat
+`sendEmailNotification_()`.
 
 ## 6. Aktifkan trigger otomatis tiap 1 jam
 
