@@ -573,3 +573,55 @@ function testFetchGoogleReviews() {
 function testCreateSheet() {
   createReviewLogSheet();
 }
+
+/**
+ * Bantuan setup: jalankan fungsi ini SEBELUM mengisi GMB_ACCOUNT_ID dan
+ * GMB_LOCATION_ID di Script Properties. Hasilnya (Account ID dan Location
+ * ID Koneo) akan muncul di Logger (View > Logs), tidak perlu cari manual
+ * lewat URL Google Business Profile.
+ *
+ * Catatan: fungsi ini butuh 2 API tambahan yang aktif di Google Cloud
+ * Console, di luar "Google My Business API" untuk membaca/membalas review:
+ *   - "My Business Account Management API"
+ *   - "My Business Business Information API"
+ */
+function listAccountsAndLocationsForSetup() {
+  const token = ScriptApp.getOAuthToken();
+
+  const accountsResponse = UrlFetchApp.fetch(
+    'https://mybusinessaccountmanagement.googleapis.com/v1/accounts',
+    { headers: { Authorization: 'Bearer ' + token }, muteHttpExceptions: true }
+  );
+  if (accountsResponse.getResponseCode() !== 200) {
+    Logger.log('Gagal ambil daftar akun: ' + accountsResponse.getContentText());
+    return;
+  }
+
+  const accounts = JSON.parse(accountsResponse.getContentText()).accounts || [];
+  if (!accounts.length) {
+    Logger.log('Tidak ada akun Business Profile yang ditemukan untuk akun Google ini.');
+    return;
+  }
+
+  accounts.forEach(function (account) {
+    // account.name formatnya "accounts/1234567890"
+    const accountId = account.name.split('/')[1];
+    Logger.log('=== Akun: ' + account.accountName + ' | GMB_ACCOUNT_ID = ' + accountId + ' ===');
+
+    const locationsResponse = UrlFetchApp.fetch(
+      'https://mybusinessbusinessinformation.googleapis.com/v1/' + account.name + '/locations?readMask=name,title',
+      { headers: { Authorization: 'Bearer ' + token }, muteHttpExceptions: true }
+    );
+    if (locationsResponse.getResponseCode() !== 200) {
+      Logger.log('Gagal ambil daftar lokasi untuk akun ini: ' + locationsResponse.getContentText());
+      return;
+    }
+
+    const locations = JSON.parse(locationsResponse.getContentText()).locations || [];
+    locations.forEach(function (location) {
+      // location.name formatnya "locations/1234567890"
+      const locationId = location.name.split('/')[1];
+      Logger.log('  -> Cabang: ' + location.title + ' | GMB_LOCATION_ID = ' + locationId);
+    });
+  });
+}
