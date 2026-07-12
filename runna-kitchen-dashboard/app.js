@@ -41,7 +41,7 @@ function showFatalBanner(msg) {
   const div = document.createElement('div');
   div.style.cssText =
     'background:#d03b3b;color:#fff;padding:10px 16px;font-size:13px;font-weight:600;text-align:center;';
-  div.textContent = '⚠️ ' + msg;
+  div.textContent = 'Perhatian: ' + msg;
   document.body.prepend(div);
 }
 
@@ -49,7 +49,7 @@ function setCloudBadge(ok) {
   const el = document.getElementById('cloud-badge');
   el.hidden = false;
   el.className = 'cloud-badge ' + (ok ? 'ok' : 'err');
-  el.textContent = ok ? '☁️ Tersinkron' : '⚠️ Gagal sinkron';
+  el.querySelector('.cb-text').textContent = ok ? 'Tersinkron' : 'Gagal sinkron';
 }
 
 async function pullCloud() {
@@ -85,6 +85,7 @@ function pushCloud() {
 async function afterLogin() {
   document.getElementById('login-overlay').hidden = true;
   document.getElementById('logout-btn').hidden = false;
+  showWelcome();
   await pullCloud();
   cloudReady = true;
   renderPriceForm();
@@ -173,18 +174,41 @@ function toast(msg) {
   toast._t = setTimeout(() => (el.hidden = true), 2600);
 }
 
-/* ============================ TABS ============================ */
-document.querySelectorAll('.tab').forEach((btn) => {
+/* ============================ MENU (drawer) ============================ */
+const drawer = document.getElementById('drawer');
+const backdrop = document.getElementById('drawer-backdrop');
+
+function setDrawer(open) {
+  drawer.classList.toggle('open', open);
+  backdrop.hidden = !open;
+}
+document.getElementById('menu-btn').addEventListener('click', () => setDrawer(true));
+backdrop.addEventListener('click', () => setDrawer(false));
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') setDrawer(false);
+});
+
+document.querySelectorAll('.drawer-item[data-tab]').forEach((btn) => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach((b) => {
+    document.querySelectorAll('.drawer-item[data-tab]').forEach((b) => {
       b.classList.toggle('active', b === btn);
-      b.setAttribute('aria-selected', b === btn);
     });
     document.querySelectorAll('.tab-panel').forEach((p) => {
       p.classList.toggle('active', p.id === 'tab-' + btn.dataset.tab);
     });
+    setDrawer(false);
+    window.scrollTo({ top: 0 });
   });
 });
+
+/* ---------- animasi sambutan setelah login ---------- */
+function showWelcome() {
+  const el = document.getElementById('welcome');
+  el.hidden = false;
+  el.classList.remove('fade-out');
+  setTimeout(() => el.classList.add('fade-out'), 1900);
+  setTimeout(() => { el.hidden = true; }, 2500);
+}
 
 /* ============================ FINANCE ============================ */
 document.getElementById('finance-form').addEventListener('submit', (e) => {
@@ -426,10 +450,10 @@ function renderStock() {
     const pct = Math.min(100, (qty / cap) * 100);
     const status =
       qty === 0
-        ? '<span class="stock-status out">⛔ Habis</span>'
+        ? '<span class="stock-status out"><span class="sdot"></span>Habis</span>'
         : qty < LOW_STOCK
-        ? '<span class="stock-status warn">⚠️ Stok menipis</span>'
-        : '<span class="stock-status ok">✔ Aman</span>';
+        ? '<span class="stock-status warn"><span class="sdot"></span>Stok menipis</span>'
+        : '<span class="stock-status ok"><span class="sdot"></span>Aman</span>';
     return `<div class="stock-card">
       <h3>Dimsum ${v}</h3>
       <div class="stock-qty">${qty} <small>pcs</small></div>
@@ -595,11 +619,11 @@ function renderOrders() {
       const pcs = o.paket * o.qty;
       const aksi =
         o.status === 'Baru'
-          ? `<button class="btn small primary" data-done="${o.id}">✔ Selesai</button>
+          ? `<button class="btn small primary" data-done="${o.id}">Selesai</button>
              <button class="btn small" data-cancel="${o.id}">Batal</button>
              <button class="btn small danger" data-del="${o.id}">Hapus</button>`
           : o.status === 'Selesai'
-          ? `<button class="btn small" data-undo="${o.id}">↩ Batalkan selesai</button>`
+          ? `<button class="btn small" data-undo="${o.id}">Batalkan selesai</button>`
           : `<button class="btn small danger" data-del="${o.id}">Hapus</button>`;
       return `<tr>
         <td><strong>${o.nama}</strong></td>
