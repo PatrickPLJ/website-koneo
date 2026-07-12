@@ -20,10 +20,30 @@ let state = load();
 let orderFilter = 'semua';
 
 /* ---------- sinkronisasi cloud (opsional, lihat config.js) ---------- */
-const cloudEnabled =
-  typeof SUPABASE_URL !== 'undefined' && SUPABASE_URL && SUPABASE_ANON_KEY && window.supabase;
-const db = cloudEnabled ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+const cloudConfigured =
+  typeof SUPABASE_URL !== 'undefined' && SUPABASE_URL && SUPABASE_ANON_KEY;
+let db = null;
+if (cloudConfigured) {
+  if (!window.supabase) {
+    showFatalBanner('File supabase.min.js gagal dimuat — sinkronisasi mati. Pastikan file itu ada di repo.');
+  } else {
+    try {
+      db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    } catch (e) {
+      showFatalBanner('Konfigurasi Supabase tidak valid: ' + e.message);
+    }
+  }
+}
+const cloudEnabled = !!db;
 let cloudReady = false;
+
+function showFatalBanner(msg) {
+  const div = document.createElement('div');
+  div.style.cssText =
+    'background:#d03b3b;color:#fff;padding:10px 16px;font-size:13px;font-weight:600;text-align:center;';
+  div.textContent = '⚠️ ' + msg;
+  document.body.prepend(div);
+}
 
 function setCloudBadge(ok) {
   const el = document.getElementById('cloud-badge');
